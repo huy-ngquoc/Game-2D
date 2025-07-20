@@ -38,8 +38,29 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: TileBackgroundOuter
+    uniqueID: 3096293035
+    locked: 0
+  - name: EnvironmentOuter
+    uniqueID: 173910975
+    locked: 0
+  - name: TileBackground
+    uniqueID: 1992178121
+    locked: 0
+  - name: EnvironmentInner
+    uniqueID: 1086583255
+    locked: 0
+  - name: TileGround
+    uniqueID: 3355977967
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: TilePlatform
+    uniqueID: 832200667
+    locked: 0
+  - name: Player
+    uniqueID: 2036811523
     locked: 0
   m_RenderingLayers:
   - Default
