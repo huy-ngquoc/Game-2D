@@ -25,6 +25,7 @@ namespace Game
         private string currentAnimationName = "Idle";
         private bool isJumping = false;
         private bool isAttacking = false;
+        private bool isThrowing = false;
 
         [field: SerializeField]
         [field: Range(5, 40)]
@@ -40,16 +41,31 @@ namespace Game
 
         private bool IsGrounded => Physics2D.Raycast(this.transform.position, Vector2.down, 1.2F, this.groundLayerMask);
 
+        public void AttackFinishTrigger() => this.isAttacking = false;
+
+        public void ThrowFinishTrigger() => this.isThrowing = false;
+
         private void Attack()
         {
+            this.isAttacking = true;
+            this.inputHandler.CancelAttackInputAction();
+            this.ChangeAnimation("Attack");
         }
 
         private void Throw()
         {
+            this.isThrowing = true;
+            this.inputHandler.CancelThrowInputAction();
+            this.ChangeAnimation("Throw");
         }
 
         private void Jump()
         {
+            this.inputHandler.CancelJumpInputAction();
+            this.isJumping = true;
+
+            this.rigidbody2D.AddForceY(this.JumpForce);
+            this.ChangeAnimation("Jump");
         }
 
         private void FlipController(float x)
@@ -77,12 +93,14 @@ namespace Game
             }
         }
 
-        private void Start()
-        {
-        }
-
         private void FixedUpdate()
         {
+            if (this.isAttacking || this.isThrowing)
+            {
+                this.rigidbody2D.linearVelocityX = 0;
+                return;
+            }
+
             var isGrounded = this.IsGrounded;
 
             var moveSpeedX = this.inputHandler.MoveInputX;
@@ -101,19 +119,26 @@ namespace Game
                 return;
             }
 
-            if (this.inputHandler.JumpPressed)
+            if (this.isJumping)
             {
-                this.inputHandler.CancelJumpInputAction();
-                this.isJumping = true;
-
-                this.rigidbody2D.AddForceY(this.JumpForce);
-                this.ChangeAnimation("Jump");
-
                 return;
             }
 
-            if (this.isJumping)
+            if (this.inputHandler.JumpPressed)
             {
+                this.Jump();
+                return;
+            }
+
+            if (this.inputHandler.AttackPressed)
+            {
+                this.Attack();
+                return;
+            }
+
+            if (this.inputHandler.ThrowPressed)
+            {
+                this.Throw();
                 return;
             }
 
