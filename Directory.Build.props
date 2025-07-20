@@ -9,5 +9,6 @@
   </PropertyGroup>
   <ItemGroup>
 	  <None Remove="Assets\Packages\**" />
+	  <None Remove="Assets\TextMesh Pro\**" />
   </ItemGroup>
 </Project>
