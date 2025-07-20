@@ -469,6 +469,8 @@ dotnet_diagnostic.CS9208.severity = warning
 
 dotnet_diagnostic.CS9209.severity = warning
 
+dotnet_diagnostic.IDE0003.severity = none
+
 dotnet_diagnostic.IDE0044.severity = none
 
 dotnet_diagnostic.S100.severity = warning
