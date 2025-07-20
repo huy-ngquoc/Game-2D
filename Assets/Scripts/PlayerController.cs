@@ -27,7 +27,12 @@ namespace Game
         private bool isAttacking = false;
 
         [field: SerializeField]
+        [field: Range(5, 40)]
         public float MoveSpeed { get; private set; } = 8;
+
+        [field: SerializeField]
+        [field: Range(200, 800)]
+        public float JumpForce { get; private set; } = 400;
 
         public bool FacingRight { get; private set; } = true;
 
@@ -78,10 +83,39 @@ namespace Game
 
         private void FixedUpdate()
         {
+            var isGrounded = this.IsGrounded;
+
             var moveSpeedX = this.inputHandler.MoveInputX;
             var linearVelocityX = moveSpeedX * this.MoveSpeed;
-
             this.rigidbody2D.linearVelocityX = linearVelocityX;
+            this.FlipController(linearVelocityX);
+
+            if (!isGrounded)
+            {
+                if (this.rigidbody2D.linearVelocityY <= 0)
+                {
+                    this.isJumping = false;
+                    this.ChangeAnimation("Fall");
+                }
+
+                return;
+            }
+
+            if (this.inputHandler.JumpPressed)
+            {
+                this.inputHandler.CancelJumpInputAction();
+                this.isJumping = true;
+
+                this.rigidbody2D.AddForceY(this.JumpForce);
+                this.ChangeAnimation("Jump");
+
+                return;
+            }
+
+            if (this.isJumping)
+            {
+                return;
+            }
 
             if (Mathf.Abs(linearVelocityX) > Mathf.Epsilon)
             {
@@ -91,8 +125,6 @@ namespace Game
             {
                 this.ChangeAnimation("Idle");
             }
-
-            this.FlipController(linearVelocityX);
         }
 
         private void OnDrawGizmos()

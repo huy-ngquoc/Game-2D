@@ -58,6 +58,10 @@ namespace Game
             }
         }
 
+        public bool JumpPressed { get; private set; } = false;
+
+        public void CancelJumpInputAction() => this.JumpPressed = false;
+
         public void Dispose()
         {
             this.inputSystemAction?.Dispose();
@@ -70,6 +74,9 @@ namespace Game
 
             playerActions.Move.performed += context => this.MoveInput = context.ReadValue<Vector2>();
             playerActions.Move.canceled += context => this.MoveInput = Vector2.zero;
+
+            playerActions.Jump.performed += context => this.JumpPressed = true;
+            playerActions.Jump.canceled += context => this.JumpPressed = false;
         }
 
         private void OnEnable()
