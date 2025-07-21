@@ -22,9 +22,9 @@ namespace Game
         [field: ResolveComponentInChildren]
         private Animator animator = null!;
 
+        private Vector3 savePoint = Vector3.zero;
         private string currentAnimationName = "Idle";
         private int coinCounter = 0;
-        private bool isJumping = false;
         private bool isAttacking = false;
         private bool isThrowing = false;
         private bool isDead = false;
@@ -42,6 +42,16 @@ namespace Game
         public int FacingDirection => this.FacingRight ? 1 : -1;
 
         private bool IsGrounded => Physics2D.Raycast(this.transform.position, Vector2.down, 1.2F, this.groundLayerMask);
+
+        public void OnInit()
+        {
+            this.isAttacking = false;
+            this.isThrowing = false;
+            this.isDead = false;
+
+            this.transform.position = this.savePoint;
+            this.ChangeAnimation("Idle");
+        }
 
         public void AttackFinishTrigger() => this.isAttacking = false;
 
@@ -64,7 +74,6 @@ namespace Game
         private void Jump()
         {
             this.inputHandler.CancelJumpInputAction();
-            this.isJumping = true;
 
             this.rigidbody2D.AddForceY(this.JumpForce);
             this.ChangeAnimation("Jump");
@@ -95,6 +104,12 @@ namespace Game
             }
         }
 
+        private void Awake()
+        {
+            this.savePoint = this.transform.position;
+            this.OnInit();
+        }
+
         private void FixedUpdate()
         {
             if (this.isDead || this.isAttacking || this.isThrowing)
@@ -114,15 +129,9 @@ namespace Game
             {
                 if (this.rigidbody2D.linearVelocityY <= 0)
                 {
-                    this.isJumping = false;
                     this.ChangeAnimation("Fall");
                 }
 
-                return;
-            }
-
-            if (this.isJumping)
-            {
                 return;
             }
 
@@ -165,6 +174,15 @@ namespace Game
             {
                 this.isDead = true;
                 this.ChangeAnimation("Die");
+                this.Invoke(nameof(this.OnInit), 1);
+            }
+            else if (collision.CompareTag("SpawnPoint"))
+            {
+                this.savePoint = collision.transform.position;
+            }
+            else
+            {
+                // Do nothing...
             }
         }
 
