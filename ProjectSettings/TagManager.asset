@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Coin
+  - DeathZone
   layers:
   - Default
   - TransparentFX
@@ -11,7 +13,7 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 
@@ -58,6 +60,9 @@ TagManager:
     locked: 0
   - name: TilePlatform
     uniqueID: 832200667
+    locked: 0
+  - name: Collectible
+    uniqueID: 4292696717
     locked: 0
   - name: Player
     uniqueID: 2036811523

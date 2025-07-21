@@ -23,9 +23,11 @@ namespace Game
         private Animator animator = null!;
 
         private string currentAnimationName = "Idle";
+        private int coinCounter = 0;
         private bool isJumping = false;
         private bool isAttacking = false;
         private bool isThrowing = false;
+        private bool isDead = false;
 
         [field: SerializeField]
         [field: Range(5, 40)]
@@ -95,7 +97,7 @@ namespace Game
 
         private void FixedUpdate()
         {
-            if (this.isAttacking || this.isThrowing)
+            if (this.isDead || this.isAttacking || this.isThrowing)
             {
                 this.rigidbody2D.linearVelocityX = 0;
                 return;
@@ -149,6 +151,20 @@ namespace Game
             else
             {
                 this.ChangeAnimation("Idle");
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Coin"))
+            {
+                Object.Destroy(collision.gameObject);
+                ++this.coinCounter;
+            }
+            else if (collision.CompareTag("DeathZone"))
+            {
+                this.isDead = true;
+                this.ChangeAnimation("Die");
             }
         }
 

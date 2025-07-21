@@ -1,181 +1,181 @@
 fileFormatVersion: 2
-guid: d97c17f218330254795f0727d5cec8c4
+guid: 9a1b3202976104042a4ffab26f92a01d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 21300000
-    second: coin_0
+      213: -8184027667192642650
+    second: coin_fliped_0
   - first:
-      213: 21300002
-    second: coin_1
+      213: 4467531380192275541
+    second: coin_fliped_1
   - first:
-      213: 21300004
-    second: coin_2
+      213: -2082426172532926437
+    second: coin_fliped_2
   - first:
-      213: 21300006
-    second: coin_3
+      213: -333704573222946317
+    second: coin_fliped_3
   - first:
-      213: 21300008
-    second: coin_4
+      213: 7677917579116803197
+    second: coin_fliped_4
   - first:
-      213: 21300010
-    second: coin_5
+      213: -8929780200610039021
+    second: coin_fliped_5
   - first:
-      213: 21300012
-    second: coin_6
+      213: -1777715496142358147
+    second: coin_fliped_6
   - first:
-      213: 21300014
-    second: coin_7
+      213: 4056775852926806100
+    second: coin_fliped_7
   - first:
-      213: 21300016
-    second: coin_8
+      213: -8935194807579159293
+    second: coin_fliped_8
   - first:
-      213: 21300018
-    second: coin_9
+      213: 5823215186058845563
+    second: coin_fliped_9
   - first:
-      213: 21300020
-    second: coin_10
+      213: -8499103169456292655
+    second: coin_fliped_10
   - first:
-      213: 21300022
-    second: coin_11
+      213: 2762825280956334585
+    second: coin_fliped_11
   - first:
-      213: 21300024
-    second: coin_12
+      213: 9096734724065671883
+    second: coin_fliped_12
   - first:
-      213: 21300026
-    second: coin_13
+      213: 8224469641123590808
+    second: coin_fliped_13
   - first:
-      213: 21300028
-    second: coin_14
+      213: 5450205798146913527
+    second: coin_fliped_14
   - first:
-      213: 21300030
-    second: coin_15
+      213: 5560850291889300773
+    second: coin_fliped_15
   - first:
-      213: 21300032
-    second: coin_16
+      213: 8217193689129612402
+    second: coin_fliped_16
   - first:
-      213: 21300034
-    second: coin_17
+      213: 8261588153075828810
+    second: coin_fliped_17
   - first:
-      213: 21300036
-    second: coin_18
+      213: 9033214586945618314
+    second: coin_fliped_18
   - first:
-      213: 21300038
-    second: coin_19
+      213: -2211180303874865881
+    second: coin_fliped_19
   - first:
-      213: 21300040
-    second: coin_20
+      213: 6905242444714253680
+    second: coin_fliped_20
   - first:
-      213: 21300042
-    second: coin_21
+      213: 8739689287796819795
+    second: coin_fliped_21
   - first:
-      213: 21300044
-    second: coin_22
+      213: 7723681750379039535
+    second: coin_fliped_22
   - first:
-      213: 21300046
-    second: coin_23
+      213: 506424262850732177
+    second: coin_fliped_23
   - first:
-      213: 21300048
-    second: coin_24
+      213: -9050849289475357793
+    second: coin_fliped_24
   - first:
-      213: 21300050
-    second: coin_25
+      213: 7965244984484667405
+    second: coin_fliped_25
   - first:
-      213: 21300052
-    second: coin_26
+      213: 5936387506517623833
+    second: coin_fliped_26
   - first:
-      213: 21300054
-    second: coin_27
+      213: -4973328723256697546
+    second: coin_fliped_27
   - first:
-      213: 21300056
-    second: coin_28
+      213: 416185485848330385
+    second: coin_fliped_28
   - first:
-      213: 21300058
-    second: coin_29
+      213: 2198632028371780357
+    second: coin_fliped_29
   - first:
-      213: 21300060
-    second: coin_30
+      213: -1019754821074908592
+    second: coin_fliped_30
   - first:
-      213: 21300062
-    second: coin_31
+      213: -4179215819352212078
+    second: coin_fliped_31
   - first:
-      213: 21300064
-    second: coin_32
+      213: -5073440588185385519
+    second: coin_fliped_32
   - first:
-      213: 21300066
-    second: coin_33
+      213: -1621218625560481957
+    second: coin_fliped_33
   - first:
-      213: 21300068
-    second: coin_34
+      213: -6494881840823516142
+    second: coin_fliped_34
   - first:
-      213: 21300070
-    second: coin_35
+      213: 8299747377502233350
+    second: coin_fliped_35
   - first:
-      213: 21300072
-    second: coin_36
+      213: -3409438082742018743
+    second: coin_fliped_36
   - first:
-      213: 21300074
-    second: coin_37
+      213: 2628461214878548060
+    second: coin_fliped_37
   - first:
-      213: 21300076
-    second: coin_38
+      213: 5888314319016073537
+    second: coin_fliped_38
   - first:
-      213: 21300078
-    second: coin_39
+      213: -2480453448839461185
+    second: coin_fliped_39
   - first:
-      213: 21300080
-    second: coin_40
+      213: -8273466510218302314
+    second: coin_fliped_40
   - first:
-      213: 21300082
-    second: coin_41
+      213: 8765133142931955853
+    second: coin_fliped_41
   - first:
-      213: 21300084
-    second: coin_42
+      213: -6611774125605092017
+    second: coin_fliped_42
   - first:
-      213: 21300086
-    second: coin_43
+      213: 7167880616764077177
+    second: coin_fliped_43
   - first:
-      213: 21300088
-    second: coin_44
+      213: 1284942469222528412
+    second: coin_fliped_44
   - first:
-      213: 21300090
-    second: coin_45
+      213: -6226939074307327309
+    second: coin_fliped_45
   - first:
-      213: 21300092
-    second: coin_46
+      213: 7074849752779073897
+    second: coin_fliped_46
   - first:
-      213: 21300094
-    second: coin_47
+      213: 6742251120587588068
+    second: coin_fliped_47
   - first:
-      213: 21300096
-    second: coin_48
+      213: 4249761310111025612
+    second: coin_fliped_48
   - first:
-      213: 21300098
-    second: coin_49
+      213: 5194150142122383597
+    second: coin_fliped_49
   - first:
-      213: 21300100
-    second: coin_50
+      213: 2038916930630589504
+    second: coin_fliped_50
   - first:
-      213: 21300102
-    second: coin_51
+      213: 9171809894715057107
+    second: coin_fliped_51
   - first:
-      213: 21300104
-    second: coin_52
+      213: -5431756579896513931
+    second: coin_fliped_52
   - first:
-      213: 21300106
-    second: coin_53
+      213: 8313618658596441460
+    second: coin_fliped_53
   - first:
-      213: 21300108
-    second: coin_54
+      213: -4325644750723118970
+    second: coin_fliped_54
   - first:
-      213: 21300110
-    second: coin_55
+      213: -3176522093807389885
+    second: coin_fliped_55
   - first:
-      213: 21300112
-    second: coin_56
+      213: 2764762755195792626
+    second: coin_fliped_56
   - first:
-      213: 21300114
-    second: coin_57
+      213: -2395817956180456023
+    second: coin_fliped_57
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -237,16 +237,16 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -271,7 +271,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: coin_0
+      name: coin_fliped_0
       rect:
         serializedVersion: 2
         x: 40
@@ -284,16 +284,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 96d01da4dbc5e304a98a20e538d10dee
-      internalID: 21300000
+      spriteID: 6a38301923e7c6e80800000000000000
+      internalID: -8184027667192642650
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_1
+      name: coin_fliped_1
       rect:
         serializedVersion: 2
         x: 109
@@ -306,16 +306,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7f2c3828d6a844649b7572f3ec0a4087
-      internalID: 21300002
+      spriteID: 55c654bce1cdffd30800000000000000
+      internalID: 4467531380192275541
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_2
+      name: coin_fliped_2
       rect:
         serializedVersion: 2
         x: 178
@@ -328,16 +328,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ab818b9f391a4e4468bc76448f3b0418
-      internalID: 21300004
+      spriteID: b18d233ed6cb913e0800000000000000
+      internalID: -2082426172532926437
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_3
+      name: coin_fliped_3
       rect:
         serializedVersion: 2
         x: 247
@@ -350,16 +350,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 793fb5a0b46eaab4792abfa8c272e960
-      internalID: 21300006
+      spriteID: 3f97f1d65717e5bf0800000000000000
+      internalID: -333704573222946317
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_4
+      name: coin_fliped_4
       rect:
         serializedVersion: 2
         x: 316
@@ -372,16 +372,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: abb5632e61b7ef34883f61264171244b
-      internalID: 21300008
+      spriteID: d74fbfddb517d8a60800000000000000
+      internalID: 7677917579116803197
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_5
+      name: coin_fliped_5
       rect:
         serializedVersion: 2
         x: 385
@@ -394,16 +394,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 5933c0fd8a1926c4c88d959923a27623
-      internalID: 21300010
+      spriteID: 31b7254383c031480800000000000000
+      internalID: -8929780200610039021
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_6
+      name: coin_fliped_6
       rect:
         serializedVersion: 2
         x: 454
@@ -416,16 +416,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 5c8b7a31c1a3671499bdfa371a4b9a1e
-      internalID: 21300012
+      spriteID: d793abccc294457e0800000000000000
+      internalID: -1777715496142358147
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_7
+      name: coin_fliped_7
       rect:
         serializedVersion: 2
         x: 523
@@ -438,16 +438,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6e68eaf06e75d314fbd25bab4f75c6ff
-      internalID: 21300014
+      spriteID: 458a51ff4209c4830800000000000000
+      internalID: 4056775852926806100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_8
+      name: coin_fliped_8
       rect:
         serializedVersion: 2
         x: 592
@@ -460,16 +460,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: bfdcbb35503d44446b584feeb31bf5c9
-      internalID: 21300016
+      spriteID: 3055457c9afcff380800000000000000
+      internalID: -8935194807579159293
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_9
+      name: coin_fliped_9
       rect:
         serializedVersion: 2
         x: 661
@@ -482,16 +482,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 62cb23d078331d040949da2b69745db2
-      internalID: 21300018
+      spriteID: b7d92b7eb5730d050800000000000000
+      internalID: 5823215186058845563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_10
+      name: coin_fliped_10
       rect:
         serializedVersion: 2
         x: 40
@@ -504,16 +504,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 33732d87a8333034eacde482623b6eec
-      internalID: 21300020
+      spriteID: 1dc392392be1d0a80800000000000000
+      internalID: -8499103169456292655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_11
+      name: coin_fliped_11
       rect:
         serializedVersion: 2
         x: 109
@@ -526,16 +526,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2f59989d815798342bf0fee8d8cf18ea
-      internalID: 21300022
+      spriteID: 9f10fd774f6875620800000000000000
+      internalID: 2762825280956334585
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_12
+      name: coin_fliped_12
       rect:
         serializedVersion: 2
         x: 178
@@ -548,16 +548,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 4112628be12f64745b8ae5c77d4e7893
-      internalID: 21300024
+      spriteID: bca35e3f8081e3e70800000000000000
+      internalID: 9096734724065671883
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_13
+      name: coin_fliped_13
       rect:
         serializedVersion: 2
         x: 247
@@ -570,16 +570,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 252119d28d3710e459986b98bd9f35e1
-      internalID: 21300026
+      spriteID: 892f721409f232270800000000000000
+      internalID: 8224469641123590808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_14
+      name: coin_fliped_14
       rect:
         serializedVersion: 2
         x: 316
@@ -592,16 +592,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 70cb38bca613bf943a6b7ada035c7641
-      internalID: 21300028
+      spriteID: 7f432570c4503ab40800000000000000
+      internalID: 5450205798146913527
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_15
+      name: coin_fliped_15
       rect:
         serializedVersion: 2
         x: 385
@@ -614,16 +614,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3ae77a0eccdccdd4bb5f822a2b7b78f1
-      internalID: 21300030
+      spriteID: 5256039b0eb1c2d40800000000000000
+      internalID: 5560850291889300773
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_16
+      name: coin_fliped_16
       rect:
         serializedVersion: 2
         x: 454
@@ -636,16 +636,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 972545e399a7b82498f2ddedef0ccac9
-      internalID: 21300032
+      spriteID: 274f62baf16590270800000000000000
+      internalID: 8217193689129612402
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_17
+      name: coin_fliped_17
       rect:
         serializedVersion: 2
         x: 523
@@ -658,16 +658,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b1868dc2fc33cd848b8df1e593627a62
-      internalID: 21300034
+      spriteID: a4809a847ae07a270800000000000000
+      internalID: 8261588153075828810
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_18
+      name: coin_fliped_18
       rect:
         serializedVersion: 2
         x: 592
@@ -680,16 +680,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: bffe96af69136ad44b6404cf63b46778
-      internalID: 21300036
+      spriteID: a8145ca8ecc6c5d70800000000000000
+      internalID: 9033214586945618314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_19
+      name: coin_fliped_19
       rect:
         serializedVersion: 2
         x: 661
@@ -702,16 +702,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 4ef3e30a4901c984fa24fb69ecba51e2
-      internalID: 21300038
+      spriteID: 725c23d9a3f4051e0800000000000000
+      internalID: -2211180303874865881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_20
+      name: coin_fliped_20
       rect:
         serializedVersion: 2
         x: 40
@@ -724,16 +724,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 14574db90e68aed4c96e2dd8246e00dd
-      internalID: 21300040
+      spriteID: 07d942dfa6954df50800000000000000
+      internalID: 6905242444714253680
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_21
+      name: coin_fliped_21
       rect:
         serializedVersion: 2
         x: 109
@@ -746,16 +746,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: eecd755a9f4d4234282a208930678491
-      internalID: 21300042
+      spriteID: 3578a663a1d994970800000000000000
+      internalID: 8739689287796819795
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_22
+      name: coin_fliped_22
       rect:
         serializedVersion: 2
         x: 178
@@ -768,16 +768,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9a2f6ceb0bffe1641bec8f346783ad42
-      internalID: 21300044
+      spriteID: f2b828151a7003b60800000000000000
+      internalID: 7723681750379039535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_23
+      name: coin_fliped_23
       rect:
         serializedVersion: 2
         x: 247
@@ -790,16 +790,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1a32f15457f90db47b98b77122ac3143
-      internalID: 21300046
+      spriteID: 1906bd41f2e270700800000000000000
+      internalID: 506424262850732177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_24
+      name: coin_fliped_24
       rect:
         serializedVersion: 2
         x: 316
@@ -812,16 +812,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 668e9835d31625040a9e2debc6b08ab5
-      internalID: 21300048
+      spriteID: f938931568ce46280800000000000000
+      internalID: -9050849289475357793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_25
+      name: coin_fliped_25
       rect:
         serializedVersion: 2
         x: 385
@@ -834,16 +834,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f96367683d48a0b4e862631b315e4630
-      internalID: 21300050
+      spriteID: d00ab299c1c3a8e60800000000000000
+      internalID: 7965244984484667405
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_26
+      name: coin_fliped_26
       rect:
         serializedVersion: 2
         x: 454
@@ -856,16 +856,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b5fee2666e233dd408e5c0cbc83e20f0
-      internalID: 21300052
+      spriteID: 914cc0f1cf8426250800000000000000
+      internalID: 5936387506517623833
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_27
+      name: coin_fliped_27
       rect:
         serializedVersion: 2
         x: 523
@@ -878,16 +878,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 45d37c436bb2c26408e096d983f68905
-      internalID: 21300054
+      spriteID: 63d990340ef2bfab0800000000000000
+      internalID: -4973328723256697546
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_28
+      name: coin_fliped_28
       rect:
         serializedVersion: 2
         x: 592
@@ -900,16 +900,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7157fa585305fa34c8dc5865da15752e
-      internalID: 21300056
+      spriteID: 190c9ac8e7696c500800000000000000
+      internalID: 416185485848330385
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_29
+      name: coin_fliped_29
       rect:
         serializedVersion: 2
         x: 661
@@ -922,16 +922,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d9fbc3c6e63def343a105e8d6d7d386c
-      internalID: 21300058
+      spriteID: 50385e25e2c138e10800000000000000
+      internalID: 2198632028371780357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_30
+      name: coin_fliped_30
       rect:
         serializedVersion: 2
         x: 40
@@ -944,16 +944,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 70bec658239d6af43b394ff684e6d052
-      internalID: 21300060
+      spriteID: 05a86d3a46a19d1f0800000000000000
+      internalID: -1019754821074908592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_31
+      name: coin_fliped_31
       rect:
         serializedVersion: 2
         x: 109
@@ -966,16 +966,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: fc90c6dc5abe14b4d8a56087df66b753
-      internalID: 21300062
+      spriteID: 29d71dfca517006c0800000000000000
+      internalID: -4179215819352212078
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_32
+      name: coin_fliped_32
       rect:
         serializedVersion: 2
         x: 178
@@ -988,16 +988,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 69ff3090d6ac64a4c8ab99a390ecdd8c
-      internalID: 21300064
+      spriteID: 1d549205aa48799b0800000000000000
+      internalID: -5073440588185385519
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_33
+      name: coin_fliped_33
       rect:
         serializedVersion: 2
         x: 247
@@ -1010,16 +1010,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: faa3b616b6ca65943a30bf8caa9f65c7
-      internalID: 21300066
+      spriteID: b5f6838ef364089e0800000000000000
+      internalID: -1621218625560481957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_34
+      name: coin_fliped_34
       rect:
         serializedVersion: 2
         x: 316
@@ -1032,16 +1032,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 63aaeb1f3b73a8245854b1284c384a95
-      internalID: 21300068
+      spriteID: 214449b806b8dd5a0800000000000000
+      internalID: -6494881840823516142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_35
+      name: coin_fliped_35
       rect:
         serializedVersion: 2
         x: 385
@@ -1054,16 +1054,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 906009e6e93e5f342a839c197533923a
-      internalID: 21300070
+      spriteID: 60320811440ae2370800000000000000
+      internalID: 8299747377502233350
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_36
+      name: coin_fliped_36
       rect:
         serializedVersion: 2
         x: 454
@@ -1076,16 +1076,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a733b03d3b07f7749ba6a3a4943c037a
-      internalID: 21300072
+      spriteID: 94d1972b02e3fa0d0800000000000000
+      internalID: -3409438082742018743
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_37
+      name: coin_fliped_37
       rect:
         serializedVersion: 2
         x: 523
@@ -1098,16 +1098,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: bc7169664fb770e4882372e66a524468
-      internalID: 21300074
+      spriteID: c504aba7c8b2a7420800000000000000
+      internalID: 2628461214878548060
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_38
+      name: coin_fliped_38
       rect:
         serializedVersion: 2
         x: 592
@@ -1120,16 +1120,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 409b7501958601e40bf1b0148cbfe392
-      internalID: 21300076
+      spriteID: 1499cceecae77b150800000000000000
+      internalID: 5888314319016073537
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_39
+      name: coin_fliped_39
       rect:
         serializedVersion: 2
         x: 661
@@ -1142,16 +1142,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 17ce27b77c650674592b45e8e0f71280
-      internalID: 21300078
+      spriteID: fb60804fab8a39dd0800000000000000
+      internalID: -2480453448839461185
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_40
+      name: coin_fliped_40
       rect:
         serializedVersion: 2
         x: 40
@@ -1164,16 +1164,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c23c5e504cac0c645b710c2bb11a76e1
-      internalID: 21300080
+      spriteID: 69ce85d2b0ebe2d80800000000000000
+      internalID: -8273466510218302314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_41
+      name: coin_fliped_41
       rect:
         serializedVersion: 2
         x: 109
@@ -1186,16 +1186,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: af223e5737917c74eba7406fe72e9e9c
-      internalID: 21300082
+      spriteID: d806671672204a970800000000000000
+      internalID: 8765133142931955853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_42
+      name: coin_fliped_42
       rect:
         serializedVersion: 2
         x: 178
@@ -1208,16 +1208,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 83252ae88158df5468585663ea41a7d9
-      internalID: 21300084
+      spriteID: f458034a6724e34a0800000000000000
+      internalID: -6611774125605092017
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_43
+      name: coin_fliped_43
       rect:
         serializedVersion: 2
         x: 247
@@ -1230,16 +1230,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ce47719c7a9fc0b439935e2be31be3c5
-      internalID: 21300086
+      spriteID: 97471a2a17d697360800000000000000
+      internalID: 7167880616764077177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_44
+      name: coin_fliped_44
       rect:
         serializedVersion: 2
         x: 316
@@ -1252,16 +1252,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 683e47f31ffc85140bd575528f4dfaab
-      internalID: 21300088
+      spriteID: c9572da2e5805d110800000000000000
+      internalID: 1284942469222528412
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_45
+      name: coin_fliped_45
       rect:
         serializedVersion: 2
         x: 385
@@ -1274,16 +1274,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 34958b3d1abfb704098f88ba1b6588a0
-      internalID: 21300090
+      spriteID: 3ba79e557e77599a0800000000000000
+      internalID: -6226939074307327309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_46
+      name: coin_fliped_46
       rect:
         serializedVersion: 2
         x: 454
@@ -1296,16 +1296,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3cba4270cd9f1914aa4d55aacfd11c09
-      internalID: 21300092
+      spriteID: 96928a1bd5aee2260800000000000000
+      internalID: 7074849752779073897
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_47
+      name: coin_fliped_47
       rect:
         serializedVersion: 2
         x: 523
@@ -1318,16 +1318,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d6e783959f1939a45b66fed6b5405b0d
-      internalID: 21300094
+      spriteID: 4e14a151ca9419d50800000000000000
+      internalID: 6742251120587588068
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_48
+      name: coin_fliped_48
       rect:
         serializedVersion: 2
         x: 592
@@ -1340,16 +1340,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ab41e09dfef41d54498996922271f4a5
-      internalID: 21300096
+      spriteID: cc9cd55356f2afa30800000000000000
+      internalID: 4249761310111025612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_49
+      name: coin_fliped_49
       rect:
         serializedVersion: 2
         x: 661
@@ -1362,16 +1362,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f09d193510884aa429b59bef99843f5a
-      internalID: 21300098
+      spriteID: de8df33d804551840800000000000000
+      internalID: 5194150142122383597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_50
+      name: coin_fliped_50
       rect:
         serializedVersion: 2
         x: 40
@@ -1384,16 +1384,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3646da626a321b64aaa55404af6ab291
-      internalID: 21300100
+      spriteID: 04c14c05520bb4c10800000000000000
+      internalID: 2038916930630589504
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_51
+      name: coin_fliped_51
       rect:
         serializedVersion: 2
         x: 109
@@ -1406,16 +1406,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 12645af00fbe7f04eac0d16b2513fd1e
-      internalID: 21300102
+      spriteID: 3d367e14180d84f70800000000000000
+      internalID: 9171809894715057107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_52
+      name: coin_fliped_52
       rect:
         serializedVersion: 2
         x: 178
@@ -1428,16 +1428,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 365ac426a1ba47349b22bda6dbf5e971
-      internalID: 21300104
+      spriteID: 57aa0e45b268e94b0800000000000000
+      internalID: -5431756579896513931
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_53
+      name: coin_fliped_53
       rect:
         serializedVersion: 2
         x: 247
@@ -1450,16 +1450,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: de0cbbc04f753cc46802495633332c3d
-      internalID: 21300106
+      spriteID: 47d43bf5f18ef5370800000000000000
+      internalID: 8313618658596441460
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_54
+      name: coin_fliped_54
       rect:
         serializedVersion: 2
         x: 316
@@ -1472,16 +1472,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: cbca45802c9447d4487b9624da38f4aa
-      internalID: 21300108
+      spriteID: 6888d98740938f3c0800000000000000
+      internalID: -4325644750723118970
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_55
+      name: coin_fliped_55
       rect:
         serializedVersion: 2
         x: 385
@@ -1494,16 +1494,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 31aa448e28f43b44ea049b563adde94c
-      internalID: 21300110
+      spriteID: 3433e615cf9bae3d0800000000000000
+      internalID: -3176522093807389885
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_56
+      name: coin_fliped_56
       rect:
         serializedVersion: 2
         x: 454
@@ -1516,16 +1516,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9cb9068c1e9a81e4782a9f2d35fe6f4f
-      internalID: 21300112
+      spriteID: 2fceca7d3196e5620800000000000000
+      internalID: 2764762755195792626
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_57
+      name: coin_fliped_57
       rect:
         serializedVersion: 2
         x: 523
@@ -1538,16 +1538,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 109bf7aed7257e44ba28bf6d04aa7432
-      internalID: 21300114
+      spriteID: 9ad8c5f234850ced0800000000000000
+      internalID: -2395817956180456023
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_58
+      name: coin_fliped_58
       rect:
         serializedVersion: 2
         x: 592
@@ -1562,14 +1562,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c818006d416b39c49947e4844f3c5eb1
-      internalID: 1712750153
+      spriteID: babc4350ddf08a543a3d662c2b03c99f
+      internalID: -1357097241
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_59
+      name: coin_fliped_59
       rect:
         serializedVersion: 2
         x: 661
@@ -1584,8 +1584,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2289a84f3a36354488b7fe9a90410dc4
-      internalID: 814675296
+      spriteID: bbcc4b225dcb5ad4f8bd9a4538333fb6
+      internalID: 20049610
       vertices: []
       indices: 
       edges: []
@@ -1594,7 +1594,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 93f01c638a978bd4c9c7902980ba2a2e
+    spriteID: 60dcd55c128931a4682390eddaf881f6
     internalID: 0
     vertices: []
     indices: 
@@ -1606,66 +1606,66 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":63.0,"y":61.0},"gridSpriteOffset":{"x":40.0,"y":36.0},"gridSpritePadding":{"x":6.0,"y":8.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      coin_0: 21300000
-      coin_1: 21300002
-      coin_10: 21300020
-      coin_11: 21300022
-      coin_12: 21300024
-      coin_13: 21300026
-      coin_14: 21300028
-      coin_15: 21300030
-      coin_16: 21300032
-      coin_17: 21300034
-      coin_18: 21300036
-      coin_19: 21300038
-      coin_2: 21300004
-      coin_20: 21300040
-      coin_21: 21300042
-      coin_22: 21300044
-      coin_23: 21300046
-      coin_24: 21300048
-      coin_25: 21300050
-      coin_26: 21300052
-      coin_27: 21300054
-      coin_28: 21300056
-      coin_29: 21300058
-      coin_3: 21300006
-      coin_30: 21300060
-      coin_31: 21300062
-      coin_32: 21300064
-      coin_33: 21300066
-      coin_34: 21300068
-      coin_35: 21300070
-      coin_36: 21300072
-      coin_37: 21300074
-      coin_38: 21300076
-      coin_39: 21300078
-      coin_4: 21300008
-      coin_40: 21300080
-      coin_41: 21300082
-      coin_42: 21300084
-      coin_43: 21300086
-      coin_44: 21300088
-      coin_45: 21300090
-      coin_46: 21300092
-      coin_47: 21300094
-      coin_48: 21300096
-      coin_49: 21300098
-      coin_5: 21300010
-      coin_50: 21300100
-      coin_51: 21300102
-      coin_52: 21300104
-      coin_53: 21300106
-      coin_54: 21300108
-      coin_55: 21300110
-      coin_56: 21300112
-      coin_57: 21300114
-      coin_58: 1712750153
-      coin_59: 814675296
-      coin_6: 21300012
-      coin_7: 21300014
-      coin_8: 21300016
-      coin_9: 21300018
+      coin_fliped_0: -8184027667192642650
+      coin_fliped_1: 4467531380192275541
+      coin_fliped_10: -8499103169456292655
+      coin_fliped_11: 2762825280956334585
+      coin_fliped_12: 9096734724065671883
+      coin_fliped_13: 8224469641123590808
+      coin_fliped_14: 5450205798146913527
+      coin_fliped_15: 5560850291889300773
+      coin_fliped_16: 8217193689129612402
+      coin_fliped_17: 8261588153075828810
+      coin_fliped_18: 9033214586945618314
+      coin_fliped_19: -2211180303874865881
+      coin_fliped_2: -2082426172532926437
+      coin_fliped_20: 6905242444714253680
+      coin_fliped_21: 8739689287796819795
+      coin_fliped_22: 7723681750379039535
+      coin_fliped_23: 506424262850732177
+      coin_fliped_24: -9050849289475357793
+      coin_fliped_25: 7965244984484667405
+      coin_fliped_26: 5936387506517623833
+      coin_fliped_27: -4973328723256697546
+      coin_fliped_28: 416185485848330385
+      coin_fliped_29: 2198632028371780357
+      coin_fliped_3: -333704573222946317
+      coin_fliped_30: -1019754821074908592
+      coin_fliped_31: -4179215819352212078
+      coin_fliped_32: -5073440588185385519
+      coin_fliped_33: -1621218625560481957
+      coin_fliped_34: -6494881840823516142
+      coin_fliped_35: 8299747377502233350
+      coin_fliped_36: -3409438082742018743
+      coin_fliped_37: 2628461214878548060
+      coin_fliped_38: 5888314319016073537
+      coin_fliped_39: -2480453448839461185
+      coin_fliped_4: 7677917579116803197
+      coin_fliped_40: -8273466510218302314
+      coin_fliped_41: 8765133142931955853
+      coin_fliped_42: -6611774125605092017
+      coin_fliped_43: 7167880616764077177
+      coin_fliped_44: 1284942469222528412
+      coin_fliped_45: -6226939074307327309
+      coin_fliped_46: 7074849752779073897
+      coin_fliped_47: 6742251120587588068
+      coin_fliped_48: 4249761310111025612
+      coin_fliped_49: 5194150142122383597
+      coin_fliped_5: -8929780200610039021
+      coin_fliped_50: 2038916930630589504
+      coin_fliped_51: 9171809894715057107
+      coin_fliped_52: -5431756579896513931
+      coin_fliped_53: 8313618658596441460
+      coin_fliped_54: -4325644750723118970
+      coin_fliped_55: -3176522093807389885
+      coin_fliped_56: 2764762755195792626
+      coin_fliped_57: -2395817956180456023
+      coin_fliped_58: -1357097241
+      coin_fliped_59: 20049610
+      coin_fliped_6: -1777715496142358147
+      coin_fliped_7: 4056775852926806100
+      coin_fliped_8: -8935194807579159293
+      coin_fliped_9: 5823215186058845563
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
