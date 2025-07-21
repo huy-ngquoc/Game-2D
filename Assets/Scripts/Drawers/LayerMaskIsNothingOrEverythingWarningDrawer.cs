@@ -40,7 +40,7 @@ public sealed class LayerMaskIsNothingOrEverythingWarningDrawer : PropertyDrawer
 
         EditorGUI.BeginChangeCheck();
         property.intValue = EditorGUI.MaskField(position, label, property.intValue, UnityEditorInternal.InternalEditorUtility.layers);
-        if (!EditorGUI.EndChangeCheck())
+        if ((!EditorGUI.EndChangeCheck()) || (!this.hierarchyChanged))
         {
             return;
         }
@@ -58,6 +58,8 @@ public sealed class LayerMaskIsNothingOrEverythingWarningDrawer : PropertyDrawer
         {
             // LayerMask is valid! I guess...
         }
+
+        this.hierarchyChanged = false;
     }
 }
 
