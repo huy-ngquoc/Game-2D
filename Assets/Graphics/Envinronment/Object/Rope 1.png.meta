@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b6c65f12483fc8b47ae968dd45f63fdc
+guid: 2b912639b9fc0fb4fb608d41b31f8878
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 128
@@ -82,7 +82,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -100,7 +100,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ec6fac3616a2d424087b664c56d3ae79
+    spriteID: 5eadd19f4bce68a419a4514c8e198b7a
     internalID: 0
     vertices: []
     indices: 

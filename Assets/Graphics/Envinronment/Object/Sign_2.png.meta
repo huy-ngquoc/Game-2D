@@ -1,16 +1,7 @@
 fileFormatVersion: 2
-guid: 947343aa3fa96bd41902bfcca375e89c
+guid: 210dc2582a055c447be819c092a43581
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 21300000
-    second: Rope_0
-  - first:
-      213: 21300002
-    second: Rope_1
-  - first:
-      213: 21300004
-    second: Rope_2
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 128
@@ -104,78 +95,12 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Rope_0
-      rect:
-        serializedVersion: 2
-        x: 58
-        y: 320
-        width: 37
-        height: 112
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f0c15447e070d543a3786a8612c6f6b
-      internalID: 21300000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rope_1
-      rect:
-        serializedVersion: 2
-        x: 57
-        y: 181
-        width: 29
-        height: 126
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d3c27aba709bc3d44967660833eb1150
-      internalID: 21300002
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rope_2
-      rect:
-        serializedVersion: 2
-        x: 58
-        y: 63
-        width: 32
-        height: 108
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c5c490daa260f83428e8b4722cab814f
-      internalID: 21300004
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0a5b30d5b364438448e9336899e09e10
+    spriteID: 59e3a4a4a28e34144b0c8987985c4ec3
     internalID: 0
     vertices: []
     indices: 
@@ -184,10 +109,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Rope_0: 21300000
-      Rope_1: 21300002
-      Rope_2: 21300004
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
