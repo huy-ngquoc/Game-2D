@@ -25,6 +25,7 @@ namespace Game
         private Vector3 savePoint = Vector3.zero;
         private string currentAnimationName = "Idle";
         private int coinCounter = 0;
+        private bool isJumping = false;
         private bool isAttacking = false;
         private bool isThrowing = false;
         private bool isDead = false;
@@ -45,6 +46,7 @@ namespace Game
 
         public void OnInit()
         {
+            this.isJumping = false;
             this.isAttacking = false;
             this.isThrowing = false;
             this.isDead = false;
@@ -75,6 +77,7 @@ namespace Game
         {
             this.inputHandler.CancelJumpInputAction();
 
+            this.isJumping = true;
             this.rigidbody2D.AddForceY(this.JumpForce);
             this.ChangeAnimation("Jump");
         }
@@ -129,9 +132,15 @@ namespace Game
             {
                 if (this.rigidbody2D.linearVelocityY <= 0)
                 {
+                    this.isJumping = false;
                     this.ChangeAnimation("Fall");
                 }
 
+                return;
+            }
+
+            if (this.isJumping)
+            {
                 return;
             }
 
