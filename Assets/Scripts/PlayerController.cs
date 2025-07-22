@@ -23,6 +23,7 @@ namespace Game
         private Animator animator = null!;
 
         private Vector3 savePoint = Vector3.zero;
+        private Vector2 platformVelocity = Vector2.zero;
         private string currentAnimationName = "Idle";
         private int coinCounter = 0;
         private bool isJumping = false;
@@ -117,25 +118,25 @@ namespace Game
         {
             if (this.isDead || this.isAttacking || this.isThrowing)
             {
-                this.rigidbody2D.linearVelocityX = 0;
+                this.rigidbody2D.linearVelocityX = this.platformVelocity.x;
                 return;
             }
 
             var isGrounded = this.IsGrounded;
 
-            var moveSpeedX = this.inputHandler.MoveInputX;
-            var linearVelocityX = moveSpeedX * this.MoveSpeed;
+            var moveSpeedX = this.inputHandler.MoveInputX * this.MoveSpeed;
+            var linearVelocityX = moveSpeedX + this.platformVelocity.x;
             this.rigidbody2D.linearVelocityX = linearVelocityX;
-            this.FlipController(linearVelocityX);
+            this.FlipController(moveSpeedX);
+
+            if (this.rigidbody2D.linearVelocityY <= 0)
+            {
+                this.isJumping = false;
+            }
 
             if (!isGrounded)
             {
-                if (this.rigidbody2D.linearVelocityY <= 0)
-                {
-                    this.isJumping = false;
-                    this.ChangeAnimation("Fall");
-                }
-
+                this.ChangeAnimation("Fall");
                 return;
             }
 
@@ -162,7 +163,7 @@ namespace Game
                 return;
             }
 
-            if (Mathf.Abs(linearVelocityX) > Mathf.Epsilon)
+            if (Mathf.Abs(moveSpeedX) > Mathf.Epsilon)
             {
                 this.ChangeAnimation("Run");
             }
@@ -192,6 +193,25 @@ namespace Game
             else
             {
                 // Do nothing...
+            }
+        }
+
+        private void OnCollisionStay2D(Collision2D collision)
+        {
+            if (Utils.IsLayerInMask(collision.gameObject, this.groundLayerMask))
+            {
+                if (collision.gameObject.TryGetComponent<MovingPlatformController>(out var platform))
+                {
+                    this.platformVelocity = platform.PlatformVelocity;
+                }
+            }
+        }
+
+        private void OnCollisionExit2D(Collision2D collision)
+        {
+            if (Utils.IsLayerInMask(collision.gameObject, this.groundLayerMask))
+            {
+                this.platformVelocity = Vector2.zero;
             }
         }
 
