@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Throw
+  m_Name: PlayerAttack
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,25 +21,25 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: 5a521bfefd02e6147850effdba713d51, type: 3}
+      value: {fileID: 21300000, guid: 6dd9a70d72a8c8540bf9688901e6f77d, type: 3}
     - time: 0.05
-      value: {fileID: 21300000, guid: bf2856af484eaa441b185b4e51481e0a, type: 3}
+      value: {fileID: 21300000, guid: 4337034152475264daba30534505b4ca, type: 3}
     - time: 0.1
-      value: {fileID: 21300000, guid: 9ab4a938a3573d949abec364c19676c8, type: 3}
+      value: {fileID: 21300000, guid: 9df10859b6b880c46a83d7c0c0f25b77, type: 3}
     - time: 0.15
-      value: {fileID: 21300000, guid: bce43f9d7fc298f40b81f398c9d95d04, type: 3}
+      value: {fileID: 21300000, guid: c0807770dc15ce04889d9df5375f94d9, type: 3}
     - time: 0.2
-      value: {fileID: 21300000, guid: 41636ded80f84834c84cebae3dd57b8f, type: 3}
+      value: {fileID: 21300000, guid: 804844bc4c76d0c42aa0fb0fa0011d8a, type: 3}
     - time: 0.25
-      value: {fileID: 21300000, guid: 5b8128b9e1212554b9e3fa9be5172197, type: 3}
+      value: {fileID: 21300000, guid: d617ad0a04d463444ad4bd626179c5cb, type: 3}
     - time: 0.3
-      value: {fileID: 21300000, guid: 988890c8a6bb3b746a2c60ea1c7719f7, type: 3}
+      value: {fileID: 21300000, guid: 589116a73d2edc34892300165fab6e0e, type: 3}
     - time: 0.35
-      value: {fileID: 21300000, guid: 11a7bc986290c62449b3257347f5160c, type: 3}
+      value: {fileID: 21300000, guid: ce798cb5a20fc6244aa9d1c7050bc7f7, type: 3}
     - time: 0.4
-      value: {fileID: 21300000, guid: e006691a6c3f0454aaf23dd3cfebd46d, type: 3}
+      value: {fileID: 21300000, guid: e8b59385d4ebb1640b315354f4fe77c6, type: 3}
     - time: 0.45
-      value: {fileID: 21300000, guid: 8dcbb6ff2687b9149b9e1b2b6412c12d, type: 3}
+      value: {fileID: 21300000, guid: 0e95121be8175544e9b4bfebe8b895e1, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -62,16 +62,16 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 5a521bfefd02e6147850effdba713d51, type: 3}
-    - {fileID: 21300000, guid: bf2856af484eaa441b185b4e51481e0a, type: 3}
-    - {fileID: 21300000, guid: 9ab4a938a3573d949abec364c19676c8, type: 3}
-    - {fileID: 21300000, guid: bce43f9d7fc298f40b81f398c9d95d04, type: 3}
-    - {fileID: 21300000, guid: 41636ded80f84834c84cebae3dd57b8f, type: 3}
-    - {fileID: 21300000, guid: 5b8128b9e1212554b9e3fa9be5172197, type: 3}
-    - {fileID: 21300000, guid: 988890c8a6bb3b746a2c60ea1c7719f7, type: 3}
-    - {fileID: 21300000, guid: 11a7bc986290c62449b3257347f5160c, type: 3}
-    - {fileID: 21300000, guid: e006691a6c3f0454aaf23dd3cfebd46d, type: 3}
-    - {fileID: 21300000, guid: 8dcbb6ff2687b9149b9e1b2b6412c12d, type: 3}
+    - {fileID: 21300000, guid: 6dd9a70d72a8c8540bf9688901e6f77d, type: 3}
+    - {fileID: 21300000, guid: 4337034152475264daba30534505b4ca, type: 3}
+    - {fileID: 21300000, guid: 9df10859b6b880c46a83d7c0c0f25b77, type: 3}
+    - {fileID: 21300000, guid: c0807770dc15ce04889d9df5375f94d9, type: 3}
+    - {fileID: 21300000, guid: 804844bc4c76d0c42aa0fb0fa0011d8a, type: 3}
+    - {fileID: 21300000, guid: d617ad0a04d463444ad4bd626179c5cb, type: 3}
+    - {fileID: 21300000, guid: 589116a73d2edc34892300165fab6e0e, type: 3}
+    - {fileID: 21300000, guid: ce798cb5a20fc6244aa9d1c7050bc7f7, type: 3}
+    - {fileID: 21300000, guid: e8b59385d4ebb1640b315354f4fe77c6, type: 3}
+    - {fileID: 21300000, guid: 0e95121be8175544e9b4bfebe8b895e1, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -98,7 +98,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.45
-    functionName: ThrowFinishTrigger
+    functionName: AttackFinishTrigger
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

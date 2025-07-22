@@ -15,7 +15,7 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -64,6 +64,9 @@ TagManager:
     locked: 0
   - name: Collectible
     uniqueID: 4292696717
+    locked: 0
+  - name: Enemy
+    uniqueID: 3977455521
     locked: 0
   - name: Player
     uniqueID: 2036811523
