@@ -11373,6 +11373,7 @@ GameObject:
   - component: {fileID: 983618826}
   - component: {fileID: 983618827}
   - component: {fileID: 983618828}
+  - component: {fileID: 983618829}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -11483,7 +11484,8 @@ MonoBehaviour:
   groundCheckDistance: 0.1
   moveSpeed: 8
   inputHandler: {fileID: 983618828}
-  <JumpForce>k__BackingField: 500
+  playerGeneralStateMachine: {fileID: 983618829}
+  jumpForce: 500
 --- !u!114 &983618828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11496,6 +11498,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9993de60cd16de44f8d7507071dfd533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &983618829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983618821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c4f2dc1fcbdb4144991ddb4d911f951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 983618827}
 --- !u!1 &984154628
 GameObject:
   m_ObjectHideFlags: 0
@@ -12009,7 +12024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2940afad0940c8e4795383ba38caaea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 983618827}
+  <PlayerController>k__BackingField: {fileID: 983618827}
 --- !u!1 &1105158049
 GameObject:
   m_ObjectHideFlags: 0
@@ -14246,6 +14261,7 @@ MonoBehaviour:
     m_Bits: 8
   groundCheckDistance: 0.1
   moveSpeed: 8
+  enemyGeneralStateMachine: {fileID: 0}
   attackRange: 0
 --- !u!1001 &1567419067
 PrefabInstance:

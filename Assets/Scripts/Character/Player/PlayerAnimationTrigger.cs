@@ -4,14 +4,12 @@ namespace Game
 {
     using UnityEngine;
 
-    public sealed class PlayerAnimationTrigger : MonoBehaviour
+    public sealed class PlayerAnimationTrigger : CharacterAnimationTrigger
     {
         [field: SerializeField]
         [field: ResolveComponentInParent]
-        private PlayerController controller = null!;
+        public PlayerController PlayerController { get; private set; } = null!;
 
-        private void AttackFinishTrigger() => this.controller.AttackFinishTrigger();
-
-        private void ThrowFinishTrigger() => this.controller.ThrowFinishTrigger();
+        public override CharacterController CharacterController => this.PlayerController;
     }
 }

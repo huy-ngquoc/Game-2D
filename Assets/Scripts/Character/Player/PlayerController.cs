@@ -6,97 +6,35 @@ namespace Game
 
     public sealed class PlayerController : CharacterController
     {
-        [field: SerializeField]
-        [field: ResolveComponent]
+        [SerializeReference]
+        [ResolveComponent]
         private PlayerInputHandler inputHandler = null!;
 
-        private Vector3 savePoint = Vector3.zero;
-        private Vector2 platformVelocity = Vector2.zero;
+        [SerializeReference]
+        [ResolveComponent]
+        private PlayerGeneralStateMachine playerGeneralStateMachine = null!;
+
+        [SerializeField]
+        [Range(200, 2000)]
+        private float jumpForce = 500;
+
         private int coinCounter = 0;
-        private bool isJumping = false;
-        private bool isAttacking = false;
-        private bool isThrowing = false;
-        private bool isDead = false;
 
-        [field: SerializeField]
-        [field: Range(200, 800)]
-        public float JumpForce { get; private set; } = 400;
+        public Vector3 SavePoint { get; private set; } = Vector3.zero;
 
-        public void AttackFinishTrigger() => this.isAttacking = false;
+        public Vector2 PlatformVelocity { get; private set; } = Vector2.zero;
 
-        public void ThrowFinishTrigger() => this.isThrowing = false;
+        public PlayerInputHandler InputHandler => this.inputHandler;
 
-        protected override void OnCharacterControllerInit()
-        {
-            this.isJumping = false;
-            this.isAttacking = false;
-            this.isThrowing = false;
-            this.isDead = false;
+        public PlayerGeneralStateMachine PlayerGeneralStateMachine => this.playerGeneralStateMachine;
 
-            this.transform.position = this.savePoint;
-            this.ChangeAnimation("Idle");
-        }
+        public override CharacterGeneralStateMachine CharacterGeneralStateMachine => this.playerGeneralStateMachine;
+
+        public float JumpForce => this.jumpForce;
 
         protected override void OnCharacterControllerAwake()
         {
-            this.savePoint = this.transform.position;
-        }
-
-        protected override void OnCharacterControllerFixedUpdate()
-        {
-            if (this.isDead || this.isAttacking || this.isThrowing)
-            {
-                this.Rigidbody2D.linearVelocityX = this.platformVelocity.x;
-                return;
-            }
-
-            var moveSpeedX = this.inputHandler.MoveInputX * this.MoveSpeed;
-            var linearVelocityX = moveSpeedX + this.platformVelocity.x;
-            this.Rigidbody2D.linearVelocityX = linearVelocityX;
-            this.FlipController(moveSpeedX);
-
-            if (this.Rigidbody2D.linearVelocityY <= 0)
-            {
-                this.isJumping = false;
-            }
-
-            if (!this.IsGroundDetected)
-            {
-                this.ChangeAnimation("Fall");
-                return;
-            }
-
-            if (this.isJumping)
-            {
-                return;
-            }
-
-            if (this.inputHandler.JumpPressed)
-            {
-                this.Jump();
-                return;
-            }
-
-            if (this.inputHandler.AttackPressed)
-            {
-                this.Attack();
-                return;
-            }
-
-            if (this.inputHandler.ThrowPressed)
-            {
-                this.Throw();
-                return;
-            }
-
-            if (Mathf.Abs(moveSpeedX) > Mathf.Epsilon)
-            {
-                this.ChangeAnimation("Run");
-            }
-            else
-            {
-                this.ChangeAnimation("Idle");
-            }
+            this.SavePoint = this.transform.position;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -108,13 +46,11 @@ namespace Game
             }
             else if (collision.CompareTag("DeathZone"))
             {
-                this.isDead = true;
-                this.ChangeAnimation("Die");
-                this.Invoke(nameof(this.Init), 1);
+                this.PlayerGeneralStateMachine.SetStateToChangeTo(this.PlayerGeneralStateMachine.DeadState);
             }
             else if (collision.CompareTag("SpawnPoint"))
             {
-                this.savePoint = collision.transform.position;
+                this.SavePoint = collision.transform.position;
             }
             else
             {
@@ -128,7 +64,7 @@ namespace Game
             {
                 if (collision.gameObject.TryGetComponent<MovingPlatformController>(out var platform))
                 {
-                    this.platformVelocity = platform.PlatformVelocity;
+                    this.PlatformVelocity = platform.PlatformVelocity;
                 }
             }
         }
@@ -137,31 +73,8 @@ namespace Game
         {
             if (Utils.IsLayerInMask(collision.gameObject, this.GroundLayerMask))
             {
-                this.platformVelocity = Vector2.zero;
+                this.PlatformVelocity = Vector2.zero;
             }
-        }
-
-        private void Attack()
-        {
-            this.isAttacking = true;
-            this.inputHandler.CancelAttackInputAction();
-            this.ChangeAnimation("Attack");
-        }
-
-        private void Throw()
-        {
-            this.isThrowing = true;
-            this.inputHandler.CancelThrowInputAction();
-            this.ChangeAnimation("Throw");
-        }
-
-        private void Jump()
-        {
-            this.inputHandler.CancelJumpInputAction();
-
-            this.isJumping = true;
-            this.Rigidbody2D.AddForceY(this.JumpForce);
-            this.ChangeAnimation("Jump");
         }
     }
 }

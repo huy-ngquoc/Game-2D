@@ -18,8 +18,6 @@ public abstract class CharacterController : MonoBehaviour
     [ResolveComponentInChildren]
     private Animator animator = null!;
 
-    private string currentAnimationName = "Idle";
-
     private bool isFacingRight = true;
 
     [Header("Character Collision info")]
@@ -42,11 +40,15 @@ public abstract class CharacterController : MonoBehaviour
     [field: Range(5, 40)]
     private float moveSpeed = 8;
 
-    private float currentHealth = 100;
-
     protected CharacterController()
     {
     }
+
+    public Rigidbody2D Rigidbody2D => this.rigidbody2D;
+
+    public CapsuleCollider2D CapsuleCollider2D => this.capsuleCollider2D;
+
+    public Animator Animator => this.animator;
 
     public bool IsGroundDetected => Physics2D.Raycast(
         this.groundCheck.position,
@@ -58,73 +60,15 @@ public abstract class CharacterController : MonoBehaviour
 
     public int FacingDirection => this.isFacingRight ? 1 : -1;
 
-    public float CurrentHealth => this.currentHealth;
-
-    public bool IsAlive => this.currentHealth > 0;
-
-    public bool IsDead => this.currentHealth <= 0;
-
     public LayerMask GroundLayerMask => this.groundLayerMask;
 
     public float MoveSpeed => this.moveSpeed;
 
-    protected Rigidbody2D Rigidbody2D => this.rigidbody2D;
+    public abstract CharacterGeneralStateMachine CharacterGeneralStateMachine { get; }
 
-    protected CapsuleCollider2D CapsuleCollider2D => this.capsuleCollider2D;
+    public void AnimationFinishTrigger() => this.CharacterGeneralStateMachine.AnimationFinishTrigger();
 
-    public void Init()
-    {
-        this.currentHealth = 100;
-
-        this.OnCharacterControllerInit();
-    }
-
-    public void Despawn()
-    {
-        this.OnCharacterControllerDespawn();
-    }
-
-    public void Hit(float damage)
-    {
-        if (this.currentHealth <= 0)
-        {
-            // Dead already...
-            return;
-        }
-
-        if (this.currentHealth > damage)
-        {
-            this.currentHealth -= damage;
-            return;
-        }
-
-        this.currentHealth = 0;
-        this.Die();
-    }
-
-    protected virtual void OnCharacterControllerInit()
-    {
-        // Leave this method blank
-        // The derived classes can decide if they override this method
-    }
-
-    protected virtual void OnCharacterControllerDespawn()
-    {
-        // Leave this method blank
-        // The derived classes can decide if they override this method
-    }
-
-    protected void ChangeAnimation(string newAnimationName)
-    {
-        if (this.currentAnimationName != newAnimationName)
-        {
-            this.animator.ResetTrigger(this.currentAnimationName);
-            this.currentAnimationName = newAnimationName;
-            this.animator.SetTrigger(this.currentAnimationName);
-        }
-    }
-
-    protected void FlipController(float x)
+    public void FlipController(float x)
     {
         bool flip = this.IsFacingRight ? (x < 0) : (x > 0);
         if (flip)

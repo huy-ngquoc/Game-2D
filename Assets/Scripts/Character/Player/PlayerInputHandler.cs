@@ -14,7 +14,7 @@ namespace Game
 
         public float MoveInputY => this.MoveInput.y;
 
-        public Vector2Int MoveInputInt => new Vector2Int(this.MoveInputXInt, this.MoveInputYInt);
+        public Vector2Int MoveInputInt => new(this.MoveInputXInt, this.MoveInputYInt);
 
         public int MoveInputXInt
         {

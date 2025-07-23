@@ -238,6 +238,7 @@
   <Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp.Features" RuleNamespace="Microsoft.CodeAnalysis.CSharp.Features">
     <Rule Id="IDE0003" Action="None" />
     <Rule Id="IDE0044" Action="None" />
+    <Rule Id="IDE0290" Action="None" />
   </Rules>
   <Rules AnalyzerId="Microsoft.Unity.Analyzers" RuleNamespace="Microsoft.Unity.Analyzers">
     <Rule Id="UNT0005" Action="Warning" />
@@ -382,6 +383,7 @@
   </Rules>
   <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
     <Rule Id="SA1000" Action="None" />
+    <Rule Id="SA1009" Action="None" />
     <Rule Id="SA1010" Action="None" />
     <Rule Id="SA1108" Action="None" />
     <Rule Id="SA1129" Action="None" />
@@ -389,6 +391,7 @@
     <Rule Id="SA1412" Action="Warning" />
     <Rule Id="SA1513" Action="None" />
     <Rule Id="SA1600" Action="None" />
+    <Rule Id="SA1601" Action="None" />
     <Rule Id="SA1609" Action="Warning" />
     <Rule Id="SA1633" Action="None" />
     <Rule Id="SA1639" Action="Warning" />
