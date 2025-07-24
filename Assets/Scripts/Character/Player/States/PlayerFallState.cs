@@ -21,7 +21,7 @@ public sealed class PlayerFallState : PlayerState
         }
 
         var moveInputXInt = this.PlayerInputHandler.MoveInputXInt;
-        var linearVelocityX = moveInputXInt * this.PlayerController.MoveSpeed * 0.8F;
+        var linearVelocityX = moveInputXInt * this.PlayerStats.MoveSpeed * 0.8F;
         this.PlayerController.Rigidbody2D.linearVelocityX = linearVelocityX;
         this.PlayerController.FlipController(linearVelocityX);
     }

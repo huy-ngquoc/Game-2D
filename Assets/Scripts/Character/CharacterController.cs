@@ -34,11 +34,9 @@ public abstract class CharacterController : MonoBehaviour
     [Range(0.01F, 2)]
     private float groundCheckDistance = 0.1F;
 
-    [Header("Character Stats")]
-
-    [field: SerializeField]
-    [field: Range(5, 40)]
-    private float moveSpeed = 8;
+    [SerializeField]
+    [LayerMaskIsNothingOrEverythingWarning]
+    private LayerMask attackTargetLayerMask = new();
 
     protected CharacterController()
     {
@@ -62,9 +60,11 @@ public abstract class CharacterController : MonoBehaviour
 
     public LayerMask GroundLayerMask => this.groundLayerMask;
 
-    public float MoveSpeed => this.moveSpeed;
+    public LayerMask AttackTargetLayerMask => this.attackTargetLayerMask;
 
     public abstract CharacterGeneralStateMachine CharacterGeneralStateMachine { get; }
+
+    public abstract CharacterStats CharacterStats { get; }
 
     public void AnimationFinishTrigger() => this.CharacterGeneralStateMachine.AnimationFinishTrigger();
 
@@ -126,16 +126,5 @@ public abstract class CharacterController : MonoBehaviour
     {
         // Leave this method blank
         // The derived classes can decide if they override this method
-    }
-
-    protected virtual void OnCharacterControllerDie()
-    {
-        // Leave this method blank
-        // The derived classes can decide if they override this method
-    }
-
-    private void Die()
-    {
-        this.OnCharacterControllerDie();
     }
 }

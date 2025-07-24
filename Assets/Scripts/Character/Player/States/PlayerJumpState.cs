@@ -16,9 +16,7 @@ public sealed class PlayerJumpState : PlayerState
     protected override void OnPlayerStateEnter()
     {
         this.PlayerInputHandler.CancelJumpInputAction();
-
-        var playerController = this.PlayerController;
-        playerController.Rigidbody2D.AddForceY(playerController.JumpForce);
+        this.PlayerController.Rigidbody2D.AddForceY(this.PlayerStats.JumpForce);
     }
 
     protected override void OnPlayerStateFixedUpdate()
@@ -31,7 +29,7 @@ public sealed class PlayerJumpState : PlayerState
         }
 
         var moveInputXInt = this.PlayerInputHandler.MoveInputXInt;
-        var linearVelocityX = moveInputXInt * this.PlayerController.MoveSpeed * 0.8F;
+        var linearVelocityX = moveInputXInt * this.PlayerStats.MoveSpeed * 0.8F;
         rigidbody2D.linearVelocityX = linearVelocityX;
         this.PlayerController.FlipController(linearVelocityX);
     }

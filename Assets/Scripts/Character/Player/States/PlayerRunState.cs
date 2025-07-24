@@ -22,7 +22,7 @@ public sealed class PlayerRunState : PlayerGroundedState
             return;
         }
 
-        var moveSpeedX = this.PlayerInputHandler.MoveInputX * this.PlayerController.MoveSpeed;
+        var moveSpeedX = this.PlayerInputHandler.MoveInputX * this.PlayerStats.MoveSpeed;
         this.PlayerController.Rigidbody2D.linearVelocityX = moveSpeedX;
         this.PlayerController.FlipController(moveSpeedX);
     }

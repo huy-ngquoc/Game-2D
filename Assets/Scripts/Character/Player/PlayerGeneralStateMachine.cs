@@ -6,7 +6,7 @@ namespace Game
 
     public sealed class PlayerGeneralStateMachine : CharacterGeneralStateMachine
     {
-        [SerializeField]
+        [SerializeReference]
         [ResolveComponent]
         private PlayerController playerController = null!;
 
@@ -21,6 +21,8 @@ namespace Game
         public PlayerController PlayerController => this.playerController;
 
         public override CharacterController CharacterController => this.PlayerController;
+
+        public PlayerStats PlayerStats => this.PlayerController.PlayerStats;
 
         public PlayerGroundedStateMachine GroundState { get; }
 

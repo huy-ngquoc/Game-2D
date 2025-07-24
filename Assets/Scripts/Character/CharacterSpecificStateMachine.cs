@@ -11,9 +11,11 @@ public abstract class CharacterSpecificStateMachine : ICharacterState
 
     public bool HasStateToChangeTo => this.stateToChangeTo != null;
 
-    public abstract CharacterGeneralStateMachine CharacterGeneralStateMachine { get; }
-
     public CharacterController CharacterController => this.CharacterGeneralStateMachine.CharacterController;
+
+    public CharacterStats CharacterStats => this.CharacterController.CharacterStats;
+
+    public abstract CharacterGeneralStateMachine CharacterGeneralStateMachine { get; }
 
     public abstract ICharacterState InitialState { get; }
 

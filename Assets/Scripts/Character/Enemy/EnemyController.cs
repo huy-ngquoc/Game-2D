@@ -6,13 +6,27 @@ namespace Game
 
     public sealed class EnemyController : CharacterController
     {
-        [SerializeField]
+        [SerializeReference]
         [ResolveComponent]
         private EnemyGeneralStateMachine enemyGeneralStateMachine = null!;
 
-        [SerializeField]
-        private float attackRange = 0;
+        [SerializeReference]
+        [ResolveComponent]
+        private EnemyStats enemyStats = null!;
+
+        public EnemyGeneralStateMachine EnemyGeneralStateMachine => this.enemyGeneralStateMachine;
 
         public override CharacterGeneralStateMachine CharacterGeneralStateMachine => this.enemyGeneralStateMachine;
+
+        public EnemyStats EnemyStats => this.enemyStats;
+
+        public override CharacterStats CharacterStats => this.enemyStats;
+
+        public RaycastHit2D IsPlayerDetected
+            => Physics2D.Raycast(
+                this.transform.position,
+                Vector2.right * this.FacingDirection,
+                this.EnemyStats.DetectionRange,
+                this.AttackTargetLayerMask);
     }
 }

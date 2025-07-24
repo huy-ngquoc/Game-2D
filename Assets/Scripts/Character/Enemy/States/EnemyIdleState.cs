@@ -1,8 +1,8 @@
 ﻿#nullable enable
 
-using UnityEngine;
-
 namespace Game;
+
+using UnityEngine;
 
 public sealed class EnemyIdleState : EnemyState
 {

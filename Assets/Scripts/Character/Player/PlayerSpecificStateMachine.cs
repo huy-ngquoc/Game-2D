@@ -8,6 +8,8 @@ public abstract class PlayerSpecificStateMachine : CharacterSpecificStateMachine
 
     public PlayerController PlayerController => this.PlayerGeneralStateMachine.PlayerController;
 
+    public PlayerStats PlayerStats => this.PlayerController.PlayerStats;
+
     public PlayerInputHandler PlayerInputHandler => this.PlayerController.InputHandler;
 
     public sealed override CharacterGeneralStateMachine CharacterGeneralStateMachine => this.PlayerGeneralStateMachine;

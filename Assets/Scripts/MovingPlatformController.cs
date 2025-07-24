@@ -6,33 +6,33 @@ namespace Game
 
     public sealed class MovingPlatformController : MonoBehaviour
     {
-        [field: SerializeField]
-        [field: ResolveComponent]
+        [SerializeReference]
+        [ResolveComponent]
         private new Rigidbody2D rigidbody2D = null!;
 
-        [field: SerializeField]
-        [field: RequireReference]
+        [SerializeReference]
+        [RequireReference]
         private Transform firstTransform = null!;
 
-        [field: SerializeField]
-        [field: RequireReference]
+        [SerializeReference]
+        [RequireReference]
         private Transform secondTransform = null!;
+
+        [SerializeField]
+        [LayerMaskIsNothingOrEverythingWarning]
+        private LayerMask playerLayerMask = new();
+
+        [SerializeField]
+        [Range(5, 50)]
+        private float speed = 10;
+
+        private bool isHeadingToFirstPosition = false;
 
         private MovingPlatformController()
         {
         }
 
-        [field: SerializeField]
-        [field: Range(5, 50)]
-        public float Speed { get; private set; } = 10;
-
-        [field: SerializeField]
-        [field: LayerMaskIsNothingOrEverythingWarning]
-        public LayerMask PlayerLayerMask { get; private set; } = new();
-
-        public bool IsHeadingToFirstPosition { get; private set; } = false;
-
-        public Transform TargetTransform => this.IsHeadingToFirstPosition ?
+        public Transform TargetTransform => this.isHeadingToFirstPosition ?
             this.firstTransform : this.secondTransform;
 
         private void Awake()
@@ -47,21 +47,21 @@ namespace Game
             var newPosition = Vector3.MoveTowards(
                 this.transform.position,
                 targetPosition,
-                this.Speed * Time.fixedDeltaTime);
+                this.speed * Time.fixedDeltaTime);
 
             var platformVelocity = (newPosition - this.transform.position) / Time.fixedDeltaTime;
             this.rigidbody2D.linearVelocity = platformVelocity;
 
             if (Vector2.Distance(newPosition, targetPosition) < Mathf.Epsilon)
             {
-                this.IsHeadingToFirstPosition = !this.IsHeadingToFirstPosition;
+                this.isHeadingToFirstPosition = !this.isHeadingToFirstPosition;
             }
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
             var gameObject = collision.gameObject;
-            if (Utils.IsLayerInMask(gameObject, this.PlayerLayerMask))
+            if (Utils.IsLayerInMask(gameObject, this.playerLayerMask))
             {
                 gameObject.transform.SetParent(this.transform);
             }
@@ -70,10 +70,17 @@ namespace Game
         private void OnCollisionExit2D(Collision2D collision)
         {
             var gameObject = collision.gameObject;
-            if (Utils.IsLayerInMask(gameObject, this.PlayerLayerMask))
+            if (Utils.IsLayerInMask(gameObject, this.playerLayerMask))
             {
                 gameObject.transform.SetParent(null);
             }
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.white;
+            Gizmos.DrawSphere(this.firstTransform.position, 0.5F);
+            Gizmos.DrawSphere(this.secondTransform.position, 0.5F);
         }
     }
 }

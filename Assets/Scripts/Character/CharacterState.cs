@@ -18,6 +18,8 @@ public abstract class CharacterState : ICharacterState
 
     public CharacterController CharacterController => this.CharacterGeneralStateMachine.CharacterController;
 
+    public CharacterStats CharacterStats => this.CharacterController.CharacterStats;
+
     public void AnimationFinishTrigger() => this.TriggerCalled = true;
 
     public void Enter()

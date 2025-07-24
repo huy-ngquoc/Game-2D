@@ -14,9 +14,9 @@ namespace Game
         [ResolveComponent]
         private PlayerGeneralStateMachine playerGeneralStateMachine = null!;
 
-        [SerializeField]
-        [Range(200, 2000)]
-        private float jumpForce = 500;
+        [SerializeReference]
+        [ResolveComponent]
+        private PlayerStats playerStats = null!;
 
         private int coinCounter = 0;
 
@@ -28,7 +28,9 @@ namespace Game
 
         public override CharacterGeneralStateMachine CharacterGeneralStateMachine => this.playerGeneralStateMachine;
 
-        public float JumpForce => this.jumpForce;
+        public PlayerStats PlayerStats => this.playerStats;
+
+        public override CharacterStats CharacterStats => this.playerStats;
 
         protected override void OnCharacterControllerAwake()
         {

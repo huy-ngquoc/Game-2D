@@ -16,6 +16,8 @@ public abstract class CharacterGeneralStateMachine : MonoBehaviour
 
     public abstract CharacterController CharacterController { get; }
 
+    public CharacterStats CharacterStats => this.CharacterController.CharacterStats;
+
     public abstract ICharacterState InitialState { get; }
 
     public void SetStateToChangeTo(ICharacterState newState)

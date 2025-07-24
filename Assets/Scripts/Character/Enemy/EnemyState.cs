@@ -10,6 +10,8 @@ public abstract class EnemyState : CharacterState
 
     public EnemyController EnemyController => this.EnemyGeneralStateMachine.EnemyController;
 
+    public EnemyStats EnemyStats => this.EnemyController.EnemyStats;
+
     protected sealed override void OnCharacterStateEnter()
     {
         this.OnEnemyStateEnter();

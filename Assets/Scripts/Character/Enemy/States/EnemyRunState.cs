@@ -22,6 +22,6 @@ public sealed class EnemyRunState : EnemyState
             return;
         }
 
-        this.EnemyController.Rigidbody2D.linearVelocityX = this.EnemyController.MoveSpeed * this.EnemyController.FacingDirection;
+        this.EnemyController.Rigidbody2D.linearVelocityX = this.EnemyStats.MoveSpeed * this.EnemyController.FacingDirection;
     }
 }
