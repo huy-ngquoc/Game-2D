@@ -9,4 +9,48 @@ public abstract class EnemyState : CharacterState
     public sealed override CharacterGeneralStateMachine CharacterGeneralStateMachine => this.EnemyGeneralStateMachine;
 
     public EnemyController EnemyController => this.EnemyGeneralStateMachine.EnemyController;
+
+    protected sealed override void OnCharacterStateEnter()
+    {
+        this.OnEnemyStateEnter();
+    }
+
+    protected virtual void OnEnemyStateEnter()
+    {
+        // Leave this method blank
+        // The derived classes can decide if they override this method
+    }
+
+    protected sealed override void OnCharacterStateUpdate()
+    {
+        this.OnEnemyStateUpdate();
+    }
+
+    protected virtual void OnEnemyStateUpdate()
+    {
+        // Leave this method blank
+        // The derived classes can decide if they override this method
+    }
+
+    protected sealed override void OnCharacterStateFixedUpdate()
+    {
+        this.OnEnemyStateFixedUpdate();
+    }
+
+    protected virtual void OnEnemyStateFixedUpdate()
+    {
+        // Leave this method blank
+        // The derived classes can decide if they override this method
+    }
+
+    protected sealed override void OnCharacterStateExit()
+    {
+        this.OnEnemyStateExit();
+    }
+
+    protected virtual void OnEnemyStateExit()
+    {
+        // Leave this method blank
+        // The derived classes can decide if they override this method
+    }
 }

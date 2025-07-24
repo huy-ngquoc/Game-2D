@@ -77,12 +77,29 @@ public abstract class CharacterController : MonoBehaviour
         }
     }
 
+    public void Flip()
+    {
+        this.isFacingRight = !this.isFacingRight;
+        this.transform.Rotate(0, 180, 0);
+    }
+
     protected void Awake()
     {
         this.OnCharacterControllerAwake();
     }
 
     protected virtual void OnCharacterControllerAwake()
+    {
+        // Leave this method blank
+        // The derived classes can decide if they override this method
+    }
+
+    protected void Update()
+    {
+        this.OnCharacterControllerUpdate();
+    }
+
+    protected virtual void OnCharacterControllerUpdate()
     {
         // Leave this method blank
         // The derived classes can decide if they override this method
@@ -115,12 +132,6 @@ public abstract class CharacterController : MonoBehaviour
     {
         // Leave this method blank
         // The derived classes can decide if they override this method
-    }
-
-    private void Flip()
-    {
-        this.isFacingRight = !this.isFacingRight;
-        this.transform.Rotate(0, 180, 0);
     }
 
     private void Die()

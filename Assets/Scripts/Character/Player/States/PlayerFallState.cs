@@ -13,7 +13,7 @@ public sealed class PlayerFallState : PlayerState
 
     public override string AnimationBoolName => "Fall";
 
-    protected override void OnPlayerStateUpdate()
+    protected override void OnPlayerStateFixedUpdate()
     {
         if (this.PlayerController.IsGroundDetected)
         {

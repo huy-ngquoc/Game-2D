@@ -22,8 +22,6 @@ namespace Game
 
         public Vector3 SavePoint { get; private set; } = Vector3.zero;
 
-        public Vector2 PlatformVelocity { get; private set; } = Vector2.zero;
-
         public PlayerInputHandler InputHandler => this.inputHandler;
 
         public PlayerGeneralStateMachine PlayerGeneralStateMachine => this.playerGeneralStateMachine;
@@ -55,25 +53,6 @@ namespace Game
             else
             {
                 // Do nothing...
-            }
-        }
-
-        private void OnCollisionStay2D(Collision2D collision)
-        {
-            if (Utils.IsLayerInMask(collision.gameObject, this.GroundLayerMask))
-            {
-                if (collision.gameObject.TryGetComponent<MovingPlatformController>(out var platform))
-                {
-                    this.PlatformVelocity = platform.PlatformVelocity;
-                }
-            }
-        }
-
-        private void OnCollisionExit2D(Collision2D collision)
-        {
-            if (Utils.IsLayerInMask(collision.gameObject, this.GroundLayerMask))
-            {
-                this.PlatformVelocity = Vector2.zero;
             }
         }
     }

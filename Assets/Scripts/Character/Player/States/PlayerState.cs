@@ -34,6 +34,17 @@ public abstract class PlayerState : CharacterState
         // The derived classes can decide if they override this method
     }
 
+    protected sealed override void OnCharacterStateFixedUpdate()
+    {
+        this.OnPlayerStateFixedUpdate();
+    }
+
+    protected virtual void OnPlayerStateFixedUpdate()
+    {
+        // Leave this method blank
+        // The derived classes can decide if they override this method
+    }
+
     protected sealed override void OnCharacterStateExit()
     {
         this.OnPlayerStateExit();

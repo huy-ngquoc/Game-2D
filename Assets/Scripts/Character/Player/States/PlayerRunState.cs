@@ -13,7 +13,7 @@ public sealed class PlayerRunState : PlayerGroundedState
 
     public override string AnimationBoolName => "Run";
 
-    protected override void OnPlayerGroundedStateUpdate()
+    protected override void OnPlayerGroundedStateFixedUpdate()
     {
         var moveInputXInt = this.PlayerInputHandler.MoveInputXInt;
         if (moveInputXInt == 0)
@@ -23,8 +23,7 @@ public sealed class PlayerRunState : PlayerGroundedState
         }
 
         var moveSpeedX = this.PlayerInputHandler.MoveInputX * this.PlayerController.MoveSpeed;
-        var linearVelocityX = moveSpeedX + this.PlayerController.PlatformVelocity.x;
-        this.PlayerController.Rigidbody2D.linearVelocityX = linearVelocityX;
+        this.PlayerController.Rigidbody2D.linearVelocityX = moveSpeedX;
         this.PlayerController.FlipController(moveSpeedX);
     }
 }

@@ -59,4 +59,22 @@ public abstract class CharacterGeneralStateMachine : MonoBehaviour
         }
         while (this.stateToChangeTo != null);
     }
+
+    protected void FixedUpdate()
+    {
+        if (this.stateToChangeTo == null)
+        {
+            this.currentState.FixedUpdate();
+            return;
+        }
+
+        do
+        {
+            this.currentState.Exit();
+            this.currentState = this.stateToChangeTo;
+            this.stateToChangeTo = null;
+            this.currentState.Enter();
+        }
+        while (this.stateToChangeTo != null);
+    }
 }

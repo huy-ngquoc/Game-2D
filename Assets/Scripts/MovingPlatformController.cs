@@ -30,12 +30,10 @@ namespace Game
         [field: LayerMaskIsNothingOrEverythingWarning]
         public LayerMask PlayerLayerMask { get; private set; } = new();
 
-        public Vector2 PlatformVelocity { get; private set; } = Vector2.zero;
-
         public bool IsHeadingToFirstPosition { get; private set; } = false;
 
-        public Vector3 TargetPosition => this.IsHeadingToFirstPosition ?
-            this.firstTransform.position : this.secondTransform.position;
+        public Transform TargetTransform => this.IsHeadingToFirstPosition ?
+            this.firstTransform : this.secondTransform;
 
         private void Awake()
         {
@@ -44,19 +42,37 @@ namespace Game
 
         private void FixedUpdate()
         {
-            var targetPosition = this.TargetPosition;
+            var targetPosition = this.TargetTransform.position;
 
             var newPosition = Vector3.MoveTowards(
                 this.transform.position,
                 targetPosition,
                 this.Speed * Time.fixedDeltaTime);
 
-            this.PlatformVelocity = (newPosition - this.transform.position) / Time.fixedDeltaTime;
-            this.rigidbody2D.linearVelocity = this.PlatformVelocity;
+            var platformVelocity = (newPosition - this.transform.position) / Time.fixedDeltaTime;
+            this.rigidbody2D.linearVelocity = platformVelocity;
 
             if (Vector2.Distance(newPosition, targetPosition) < Mathf.Epsilon)
             {
                 this.IsHeadingToFirstPosition = !this.IsHeadingToFirstPosition;
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            var gameObject = collision.gameObject;
+            if (Utils.IsLayerInMask(gameObject, this.PlayerLayerMask))
+            {
+                gameObject.transform.SetParent(this.transform);
+            }
+        }
+
+        private void OnCollisionExit2D(Collision2D collision)
+        {
+            var gameObject = collision.gameObject;
+            if (Utils.IsLayerInMask(gameObject, this.PlayerLayerMask))
+            {
+                gameObject.transform.SetParent(null);
             }
         }
     }

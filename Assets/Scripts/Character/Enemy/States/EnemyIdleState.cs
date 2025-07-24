@@ -1,5 +1,7 @@
 ﻿#nullable enable
 
+using UnityEngine;
+
 namespace Game;
 
 public sealed class EnemyIdleState : EnemyState
@@ -12,4 +14,20 @@ public sealed class EnemyIdleState : EnemyState
     public override EnemyGeneralStateMachine EnemyGeneralStateMachine { get; }
 
     public override string AnimationBoolName => "Idle";
+
+    protected override void OnEnemyStateEnter()
+    {
+        this.EnemyController.Rigidbody2D.linearVelocity = Vector2.zero;
+        this.StateTimer = Random.Range(
+            this.EnemyGeneralStateMachine.MinIdleTime,
+            this.EnemyGeneralStateMachine.MaxIdleTime);
+    }
+
+    protected override void OnEnemyStateUpdate()
+    {
+        if (this.StateTimer <= 0)
+        {
+            this.EnemyGeneralStateMachine.SetStateToChangeTo(this.EnemyGeneralStateMachine.RunState);
+        }
+    }
 }
