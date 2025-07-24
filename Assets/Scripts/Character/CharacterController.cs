@@ -68,6 +68,11 @@ public abstract class CharacterController : MonoBehaviour
 
     public void AnimationFinishTrigger() => this.CharacterGeneralStateMachine.AnimationFinishTrigger();
 
+    public void Init()
+    {
+        this.OnCharacterControllerInit();
+    }
+
     public void FlipController(float x)
     {
         bool flip = this.IsFacingRight ? (x < 0) : (x > 0);
@@ -81,6 +86,12 @@ public abstract class CharacterController : MonoBehaviour
     {
         this.isFacingRight = !this.isFacingRight;
         this.transform.Rotate(0, 180, 0);
+    }
+
+    protected virtual void OnCharacterControllerInit()
+    {
+        // Leave this method blank
+        // The derived classes can decide if they override this method
     }
 
     protected void Awake()

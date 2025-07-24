@@ -32,6 +32,12 @@ namespace Game
 
         public override CharacterStats CharacterStats => this.playerStats;
 
+        protected override void OnCharacterControllerInit()
+        {
+            this.transform.position = this.SavePoint;
+            this.playerGeneralStateMachine.SetStateToChangeTo(this.playerGeneralStateMachine.GroundState);
+        }
+
         protected override void OnCharacterControllerAwake()
         {
             this.SavePoint = this.transform.position;

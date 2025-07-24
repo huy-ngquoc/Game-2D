@@ -12,4 +12,17 @@ public sealed class PlayerDeadState : PlayerState
     public override PlayerGeneralStateMachine PlayerGeneralStateMachine { get; }
 
     public override string AnimationBoolName => "Die";
+
+    protected override void OnPlayerStateEnter()
+    {
+        this.StateTimer = 2;
+    }
+
+    protected override void OnPlayerStateUpdate()
+    {
+        if (this.StateTimer <= 0)
+        {
+            this.PlayerController.Init();
+        }
+    }
 }
