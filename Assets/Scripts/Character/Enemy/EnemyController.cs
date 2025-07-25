@@ -14,6 +14,10 @@ namespace Game
         [ResolveComponent]
         private EnemyStats enemyStats = null!;
 
+        [SerializeReference]
+        [ResolveComponent]
+        private EnemySkillManager enemySkillManager = null!;
+
         public EnemyGeneralStateMachine EnemyGeneralStateMachine => this.enemyGeneralStateMachine;
 
         public override CharacterGeneralStateMachine CharacterGeneralStateMachine => this.enemyGeneralStateMachine;
@@ -22,7 +26,11 @@ namespace Game
 
         public override CharacterStats CharacterStats => this.enemyStats;
 
-        public RaycastHit2D IsPlayerDetected
+        public EnemySkillManager EnemySkillManager => this.enemySkillManager;
+
+        public override CharacterSkillManager CharacterSkillManager => this.enemySkillManager;
+
+        public RaycastHit2D TargetRaycastHit2D
             => Physics2D.Raycast(
                 this.transform.position,
                 Vector2.right * this.FacingDirection,

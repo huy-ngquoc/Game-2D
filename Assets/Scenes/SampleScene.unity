@@ -1069,6 +1069,7 @@ GameObject:
   - component: {fileID: 265642329}
   - component: {fileID: 265642331}
   - component: {fileID: 265642330}
+  - component: {fileID: 265642332}
   m_Layer: 7
   m_Name: Animator
   m_TagString: Untagged
@@ -1168,6 +1169,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &265642332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265642328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f62522d9a6a290d4cabd04dda9cb1cfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyController: {fileID: 1550334081}
 --- !u!1 &286964304
 GameObject:
   m_ObjectHideFlags: 0
@@ -11523,7 +11537,7 @@ MonoBehaviour:
   inputHandler: {fileID: 983618828}
   playerGeneralStateMachine: {fileID: 983618829}
   playerStats: {fileID: 983618830}
-  jumpForce: 500
+  playerSkillManager: {fileID: 0}
 --- !u!114 &983618828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11563,7 +11577,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 1000
   moveSpeed: 8
+  attackRange: 5
   playerController: {fileID: 983618827}
+  jumpForce: 500
 --- !u!1 &984154628
 GameObject:
   m_ObjectHideFlags: 0
@@ -14151,6 +14167,8 @@ GameObject:
   - component: {fileID: 1550334081}
   - component: {fileID: 1550334082}
   - component: {fileID: 1550334083}
+  - component: {fileID: 1550334084}
+  - component: {fileID: 1550334085}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -14261,9 +14279,10 @@ MonoBehaviour:
   groundCheckDistance: 0.1
   attackTargetLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   enemyGeneralStateMachine: {fileID: 1550334082}
   enemyStats: {fileID: 1550334083}
+  enemySkillManager: {fileID: 1550334084}
 --- !u!114 &1550334082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14293,9 +14312,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 1000
   moveSpeed: 8
+  attackRange: 5
   enemyController: {fileID: 1550334081}
   detectionRange: 10
-  attackRange: 5
+--- !u!114 &1550334084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550334077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57c9cf5c2569f40458023451f62a64ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyController: {fileID: 1550334081}
+  attackSkill: {fileID: 1550334085}
+--- !u!114 &1550334085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550334077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c521573ca4b5404d9e851e695795f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0.5
+  enemySkillManager: {fileID: 1550334084}
 --- !u!1001 &1567419067
 PrefabInstance:
   m_ObjectHideFlags: 0

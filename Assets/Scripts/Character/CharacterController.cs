@@ -66,6 +66,8 @@ public abstract class CharacterController : MonoBehaviour
 
     public abstract CharacterStats CharacterStats { get; }
 
+    public abstract CharacterSkillManager CharacterSkillManager { get; }
+
     public void AnimationFinishTrigger() => this.CharacterGeneralStateMachine.AnimationFinishTrigger();
 
     public void Init()

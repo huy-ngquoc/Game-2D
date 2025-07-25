@@ -4,20 +4,20 @@ namespace Game
 {
     using UnityEngine;
 
-    public sealed class EnemyStats : CharacterStats
+    public sealed class EnemySkillManager : CharacterSkillManager
     {
         [SerializeReference]
         [ResolveComponent]
         private EnemyController enemyController = null!;
 
-        [SerializeField]
-        [Range(5, 20)]
-        private float detectionRange = 10;
+        [SerializeReference]
+        [ResolveComponent]
+        private EnemyAttackSkill attackSkill = null!;
 
         public EnemyController EnemyController => this.enemyController;
 
         public override CharacterController CharacterController => this.enemyController;
 
-        public float DetectionRange => this.detectionRange;
+        public EnemyAttackSkill AttackSkill => this.attackSkill;
     }
 }

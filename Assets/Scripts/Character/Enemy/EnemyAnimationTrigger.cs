@@ -4,20 +4,14 @@ namespace Game
 {
     using UnityEngine;
 
-    public sealed class EnemyStats : CharacterStats
+    public sealed class EnemyAnimationTrigger : CharacterAnimationTrigger
     {
         [SerializeReference]
-        [ResolveComponent]
+        [ResolveComponentInParent]
         private EnemyController enemyController = null!;
-
-        [SerializeField]
-        [Range(5, 20)]
-        private float detectionRange = 10;
 
         public EnemyController EnemyController => this.enemyController;
 
         public override CharacterController CharacterController => this.enemyController;
-
-        public float DetectionRange => this.detectionRange;
     }
 }

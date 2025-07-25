@@ -25,6 +25,22 @@ public sealed class EnemyIdleState : EnemyState
 
     protected override void OnEnemyStateUpdate()
     {
+        var targetRaycastHit2D = this.EnemyController.TargetRaycastHit2D;
+        var isTargetDetected = targetRaycastHit2D.collider != null;
+        if (isTargetDetected)
+        {
+            if (targetRaycastHit2D.distance <= this.EnemyStats.AttackRange)
+            {
+                this.EnemySkillManager.AttackSkill.Cast();
+            }
+            else
+            {
+                this.EnemyGeneralStateMachine.SetStateToChangeTo(this.EnemyGeneralStateMachine.RunState);
+            }
+
+            return;
+        }
+
         if (this.StateTimer <= 0)
         {
             this.EnemyGeneralStateMachine.SetStateToChangeTo(this.EnemyGeneralStateMachine.RunState);

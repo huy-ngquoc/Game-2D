@@ -18,6 +18,10 @@ namespace Game
         [ResolveComponent]
         private PlayerStats playerStats = null!;
 
+        [SerializeReference]
+        [ResolveComponent]
+        private PlayerSkillManager playerSkillManager = null!;
+
         private int coinCounter = 0;
 
         public Vector3 SavePoint { get; private set; } = Vector3.zero;
@@ -31,6 +35,10 @@ namespace Game
         public PlayerStats PlayerStats => this.playerStats;
 
         public override CharacterStats CharacterStats => this.playerStats;
+
+        public PlayerSkillManager PlayerSkillManager => this.playerSkillManager;
+
+        public override CharacterSkillManager CharacterSkillManager => this.playerSkillManager;
 
         protected override void OnCharacterControllerInit()
         {
