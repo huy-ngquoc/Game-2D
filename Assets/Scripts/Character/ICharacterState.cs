@@ -12,7 +12,5 @@ public interface ICharacterState
 
     void Update();
 
-    void FixedUpdate();
-
     void Exit();
 }

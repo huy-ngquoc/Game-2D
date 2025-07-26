@@ -2,21 +2,15 @@
 
 namespace Game
 {
+    using System.Collections.Generic;
     using UnityEngine;
 
     public sealed class MovingPlatformController : MonoBehaviour
     {
         [SerializeReference]
-        [ResolveComponent]
-        private new Rigidbody2D rigidbody2D = null!;
+        private List<Vector3> targetPositions = new();
 
-        [SerializeReference]
-        [RequireReference]
-        private Transform firstTransform = null!;
-
-        [SerializeReference]
-        [RequireReference]
-        private Transform secondTransform = null!;
+        private int targetPositionsIdx = 0;
 
         [SerializeField]
         [LayerMaskIsNothingOrEverythingWarning]
@@ -26,35 +20,41 @@ namespace Game
         [Range(5, 50)]
         private float speed = 10;
 
-        private bool isHeadingToFirstPosition = false;
-
         private MovingPlatformController()
         {
         }
 
-        public Transform TargetTransform => this.isHeadingToFirstPosition ?
-            this.firstTransform : this.secondTransform;
-
         private void Awake()
         {
-            this.transform.position = this.firstTransform.position;
+            if (this.targetPositions.Count > 0)
+            {
+                this.transform.position = this.targetPositions[0];
+            }
+            this.targetPositionsIdx = 1;
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
-            var targetPosition = this.TargetTransform.position;
-
-            var newPosition = Vector3.MoveTowards(
-                this.transform.position,
-                targetPosition,
-                this.speed * Time.fixedDeltaTime);
-
-            var platformVelocity = (newPosition - this.transform.position) / Time.fixedDeltaTime;
-            this.rigidbody2D.linearVelocity = platformVelocity;
-
-            if (Vector2.Distance(newPosition, targetPosition) < Mathf.Epsilon)
+            var amountTargetTransforms = this.targetPositions.Count;
+            if (amountTargetTransforms <= 1)
             {
-                this.isHeadingToFirstPosition = !this.isHeadingToFirstPosition;
+                return;
+            }
+
+            var currentPosition = this.transform.localPosition;
+            this.targetPositionsIdx = Utils.ModPositive(this.targetPositionsIdx, amountTargetTransforms);
+
+            var deltaTime = Time.deltaTime;
+            var newPosition = Vector3.MoveTowards(
+                currentPosition,
+                this.targetPositions[this.targetPositionsIdx],
+                this.speed * deltaTime);
+
+            this.transform.localPosition = newPosition;
+
+            if (newPosition == this.targetPositions[this.targetPositionsIdx])
+            {
+                ++this.targetPositionsIdx;
             }
         }
 
@@ -79,8 +79,10 @@ namespace Game
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.white;
-            Gizmos.DrawSphere(this.firstTransform.position, 0.5F);
-            Gizmos.DrawSphere(this.secondTransform.position, 0.5F);
+            foreach (var targetPosition in this.targetPositions)
+            {
+                Gizmos.DrawSphere(this.transform.parent.TransformPoint(targetPosition), 0.1F);
+            }
         }
     }
 }

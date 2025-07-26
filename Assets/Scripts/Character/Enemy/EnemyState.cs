@@ -36,17 +36,6 @@ public abstract class EnemyState : CharacterState
         // The derived classes can decide if they override this method
     }
 
-    protected sealed override void OnCharacterStateFixedUpdate()
-    {
-        this.OnEnemyStateFixedUpdate();
-    }
-
-    protected virtual void OnEnemyStateFixedUpdate()
-    {
-        // Leave this method blank
-        // The derived classes can decide if they override this method
-    }
-
     protected sealed override void OnCharacterStateExit()
     {
         this.OnEnemyStateExit();

@@ -28,27 +28,16 @@ public abstract class PlayerGroundedState : PlayerState
             return;
         }
 
-        this.OnPlayerGroundedStateUpdate();
-    }
-
-    protected virtual void OnPlayerGroundedStateUpdate()
-    {
-        // Leave this method blank
-        // The derived classes can decide if they override this method
-    }
-
-    protected sealed override void OnPlayerStateFixedUpdate()
-    {
         if (!this.PlayerController.IsGroundDetected)
         {
             this.PlayerGeneralStateMachine.SetStateToChangeTo(this.PlayerGeneralStateMachine.FallState);
             return;
         }
 
-        this.OnPlayerGroundedStateFixedUpdate();
+        this.OnPlayerGroundedStateUpdate();
     }
 
-    protected virtual void OnPlayerGroundedStateFixedUpdate()
+    protected virtual void OnPlayerGroundedStateUpdate()
     {
         // Leave this method blank
         // The derived classes can decide if they override this method

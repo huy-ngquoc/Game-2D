@@ -10,4 +10,9 @@ public static class Utils
     {
         return ((1 << obj.layer) & mask) != 0;
     }
+
+    public static int ModPositive(int a, int b)
+    {
+        return ((a % b) + b) % b;
+    }
 }

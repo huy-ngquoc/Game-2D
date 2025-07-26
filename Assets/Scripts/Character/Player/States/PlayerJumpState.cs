@@ -19,7 +19,7 @@ public sealed class PlayerJumpState : PlayerState
         this.PlayerController.Rigidbody2D.AddForceY(this.PlayerStats.JumpForce);
     }
 
-    protected override void OnPlayerStateFixedUpdate()
+    protected override void OnPlayerStateUpdate()
     {
         var rigidbody2D = this.PlayerController.Rigidbody2D;
         if (rigidbody2D.linearVelocityY <= 0)

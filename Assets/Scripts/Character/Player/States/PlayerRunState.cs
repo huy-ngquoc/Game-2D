@@ -13,7 +13,7 @@ public sealed class PlayerRunState : PlayerGroundedState
 
     public override string AnimationBoolName => "Run";
 
-    protected override void OnPlayerGroundedStateFixedUpdate()
+    protected override void OnPlayerGroundedStateUpdate()
     {
         var moveInputXInt = this.PlayerInputHandler.MoveInputXInt;
         if (moveInputXInt == 0)

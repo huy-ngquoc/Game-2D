@@ -10,8 +10,6 @@ public abstract class CharacterState : ICharacterState
 
     public float StateTimer { get; protected set; } = 0;
 
-    public float StateFixedTimer { get; protected set; } = 0;
-
     public bool TriggerCalled { get; protected set; } = false;
 
     public abstract CharacterGeneralStateMachine CharacterGeneralStateMachine { get; }
@@ -49,20 +47,6 @@ public abstract class CharacterState : ICharacterState
         this.OnCharacterStateUpdate();
     }
 
-    public void FixedUpdate()
-    {
-        if (this.StateFixedTimer > Time.fixedDeltaTime)
-        {
-            this.StateFixedTimer -= Time.fixedDeltaTime;
-        }
-        else
-        {
-            this.StateFixedTimer = 0;
-        }
-
-        this.OnCharacterStateFixedUpdate();
-    }
-
     public void Exit()
     {
         var animationBoolName = this.AnimationBoolName;
@@ -81,12 +65,6 @@ public abstract class CharacterState : ICharacterState
     }
 
     protected virtual void OnCharacterStateUpdate()
-    {
-        // Leave this method blank
-        // The derived classes can decide if they override this method
-    }
-
-    protected virtual void OnCharacterStateFixedUpdate()
     {
         // Leave this method blank
         // The derived classes can decide if they override this method

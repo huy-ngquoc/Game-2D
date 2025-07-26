@@ -13,7 +13,7 @@ public sealed class EnemyRunState : EnemyState
 
     public override EnemyGeneralStateMachine EnemyGeneralStateMachine { get; }
 
-    protected override void OnEnemyStateFixedUpdate()
+    protected override void OnEnemyStateUpdate()
     {
         if (!this.EnemyController.IsGroundDetected)
         {

@@ -55,24 +55,6 @@ public abstract class CharacterSpecificStateMachine : ICharacterState
         while (this.stateToChangeTo != null);
     }
 
-    public void FixedUpdate()
-    {
-        if (this.stateToChangeTo == null)
-        {
-            this.currentState.FixedUpdate();
-            return;
-        }
-
-        do
-        {
-            this.currentState.Exit();
-            this.currentState = this.stateToChangeTo;
-            this.stateToChangeTo = null;
-            this.currentState.Enter();
-        }
-        while (this.stateToChangeTo != null);
-    }
-
     public void Exit()
     {
         this.currentState.Exit();
