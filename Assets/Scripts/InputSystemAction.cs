@@ -232,6 +232,54 @@ namespace Game
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Ui"",
+            ""id"": ""9680d501-5fed-414a-8b76-c7555bd8bf4a"",
+            ""actions"": [
+                {
+                    ""name"": ""MousePosition"",
+                    ""type"": ""Value"",
+                    ""id"": ""bc837332-e3c8-4096-8bc4-9392dec850b8"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""LeftMousePressed"",
+                    ""type"": ""Button"",
+                    ""id"": ""958813e2-3115-48b4-b66e-095abb3b44b1"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""6f593959-fcb4-4d33-aff8-4923189a7195"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MousePosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ba056776-885a-4f65-be8a-21f70a62be87"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftMousePressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -303,11 +351,16 @@ namespace Game
             m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
             m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
             m_Player_Throw = m_Player.FindAction("Throw", throwIfNotFound: true);
+            // Ui
+            m_Ui = asset.FindActionMap("Ui", throwIfNotFound: true);
+            m_Ui_MousePosition = m_Ui.FindAction("MousePosition", throwIfNotFound: true);
+            m_Ui_LeftMousePressed = m_Ui.FindAction("LeftMousePressed", throwIfNotFound: true);
         }
 
         ~@InputSystemAction()
         {
             UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, InputSystemAction.Player.Disable() has not been called.");
+            UnityEngine.Debug.Assert(!m_Ui.enabled, "This will cause a leak and performance issues, InputSystemAction.Ui.Disable() has not been called.");
         }
 
         /// <summary>
@@ -508,6 +561,113 @@ namespace Game
         /// Provides a new <see cref="PlayerActions" /> instance referencing this action map.
         /// </summary>
         public PlayerActions @Player => new PlayerActions(this);
+
+        // Ui
+        private readonly InputActionMap m_Ui;
+        private List<IUiActions> m_UiActionsCallbackInterfaces = new List<IUiActions>();
+        private readonly InputAction m_Ui_MousePosition;
+        private readonly InputAction m_Ui_LeftMousePressed;
+        /// <summary>
+        /// Provides access to input actions defined in input action map "Ui".
+        /// </summary>
+        public struct UiActions
+        {
+            private @InputSystemAction m_Wrapper;
+
+            /// <summary>
+            /// Construct a new instance of the input action map wrapper class.
+            /// </summary>
+            public UiActions(@InputSystemAction wrapper) { m_Wrapper = wrapper; }
+            /// <summary>
+            /// Provides access to the underlying input action "Ui/MousePosition".
+            /// </summary>
+            public InputAction @MousePosition => m_Wrapper.m_Ui_MousePosition;
+            /// <summary>
+            /// Provides access to the underlying input action "Ui/LeftMousePressed".
+            /// </summary>
+            public InputAction @LeftMousePressed => m_Wrapper.m_Ui_LeftMousePressed;
+            /// <summary>
+            /// Provides access to the underlying input action map instance.
+            /// </summary>
+            public InputActionMap Get() { return m_Wrapper.m_Ui; }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+            public void Enable() { Get().Enable(); }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+            public void Disable() { Get().Disable(); }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+            public bool enabled => Get().enabled;
+            /// <summary>
+            /// Implicitly converts an <see ref="UiActions" /> to an <see ref="InputActionMap" /> instance.
+            /// </summary>
+            public static implicit operator InputActionMap(UiActions set) { return set.Get(); }
+            /// <summary>
+            /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+            /// </summary>
+            /// <param name="instance">Callback instance.</param>
+            /// <remarks>
+            /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+            /// </remarks>
+            /// <seealso cref="UiActions" />
+            public void AddCallbacks(IUiActions instance)
+            {
+                if (instance == null || m_Wrapper.m_UiActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_UiActionsCallbackInterfaces.Add(instance);
+                @MousePosition.started += instance.OnMousePosition;
+                @MousePosition.performed += instance.OnMousePosition;
+                @MousePosition.canceled += instance.OnMousePosition;
+                @LeftMousePressed.started += instance.OnLeftMousePressed;
+                @LeftMousePressed.performed += instance.OnLeftMousePressed;
+                @LeftMousePressed.canceled += instance.OnLeftMousePressed;
+            }
+
+            /// <summary>
+            /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+            /// </summary>
+            /// <remarks>
+            /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+            /// </remarks>
+            /// <seealso cref="UiActions" />
+            private void UnregisterCallbacks(IUiActions instance)
+            {
+                @MousePosition.started -= instance.OnMousePosition;
+                @MousePosition.performed -= instance.OnMousePosition;
+                @MousePosition.canceled -= instance.OnMousePosition;
+                @LeftMousePressed.started -= instance.OnLeftMousePressed;
+                @LeftMousePressed.performed -= instance.OnLeftMousePressed;
+                @LeftMousePressed.canceled -= instance.OnLeftMousePressed;
+            }
+
+            /// <summary>
+            /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="UiActions.UnregisterCallbacks(IUiActions)" />.
+            /// </summary>
+            /// <seealso cref="UiActions.UnregisterCallbacks(IUiActions)" />
+            public void RemoveCallbacks(IUiActions instance)
+            {
+                if (m_Wrapper.m_UiActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            /// <summary>
+            /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+            /// </summary>
+            /// <remarks>
+            /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+            /// </remarks>
+            /// <seealso cref="UiActions.AddCallbacks(IUiActions)" />
+            /// <seealso cref="UiActions.RemoveCallbacks(IUiActions)" />
+            /// <seealso cref="UiActions.UnregisterCallbacks(IUiActions)" />
+            public void SetCallbacks(IUiActions instance)
+            {
+                foreach (var item in m_Wrapper.m_UiActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_UiActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        /// <summary>
+        /// Provides a new <see cref="UiActions" /> instance referencing this action map.
+        /// </summary>
+        public UiActions @Ui => new UiActions(this);
         private int m_KeyboardMouseSchemeIndex = -1;
         /// <summary>
         /// Provides access to the input control scheme.
@@ -608,6 +768,28 @@ namespace Game
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnThrow(InputAction.CallbackContext context);
+        }
+        /// <summary>
+        /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Ui" which allows adding and removing callbacks.
+        /// </summary>
+        /// <seealso cref="UiActions.AddCallbacks(IUiActions)" />
+        /// <seealso cref="UiActions.RemoveCallbacks(IUiActions)" />
+        public interface IUiActions
+        {
+            /// <summary>
+            /// Method invoked when associated input action "MousePosition" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnMousePosition(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "LeftMousePressed" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnLeftMousePressed(InputAction.CallbackContext context);
         }
     }
 }

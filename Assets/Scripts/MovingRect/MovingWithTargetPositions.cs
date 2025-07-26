@@ -5,7 +5,7 @@ namespace Game
     using System.Collections.Generic;
     using UnityEngine;
 
-    public sealed class MovingRectController : MonoBehaviour
+    public sealed class MovingWithTargetPositions : MonoBehaviour
     {
         [SerializeReference]
         private List<Vector3> targetPositions = new();

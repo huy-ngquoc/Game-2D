@@ -755,8 +755,6 @@ dotnet_diagnostic.SA1108.severity = none
 
 dotnet_diagnostic.SA1129.severity = none
 
-dotnet_diagnostic.SA1305.severity = warning
-
 dotnet_diagnostic.SA1412.severity = warning
 
 dotnet_diagnostic.SA1513.severity = none
@@ -774,3 +772,5 @@ dotnet_diagnostic.SA1639.severity = warning
 dotnet_diagnostic.UNT0005.severity = warning
 
 dotnet_diagnostic.UNT0021.severity = warning
+
+dotnet_diagnostic.UNT0034.severity = none
