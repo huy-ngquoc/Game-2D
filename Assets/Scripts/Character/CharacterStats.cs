@@ -24,4 +24,16 @@ public abstract class CharacterStats : MonoBehaviour
     public float MoveSpeed => this.moveSpeed;
 
     public float AttackRange => this.attackRange;
+
+    public void TakeDamage(int damage)
+    {
+        if (this.currentHealth < damage)
+        {
+            this.currentHealth = 0;
+            this.CharacterController.Die();
+            return;
+        }
+
+        this.currentHealth -= damage;
+    }
 }

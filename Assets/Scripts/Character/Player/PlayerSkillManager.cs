@@ -10,6 +10,12 @@ namespace Game
         [ResolveComponent]
         private PlayerController playerController = null!;
 
+        [SerializeReference]
+        [ResolveComponent]
+        private PlayerThrowSkill throwSkill = null!;
+
+        public PlayerThrowSkill ThrowSkill => this.throwSkill;
+
         public PlayerController PlayerController => this.playerController;
 
         public override CharacterController CharacterController => this.playerController;

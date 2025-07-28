@@ -70,6 +70,10 @@ public abstract class CharacterController : MonoBehaviour
 
     public void AnimationFinishTrigger() => this.CharacterGeneralStateMachine.AnimationFinishTrigger();
 
+    public void Die()
+    {
+    }
+
     public void Init()
     {
         this.OnCharacterControllerInit();

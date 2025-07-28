@@ -243,6 +243,7 @@
   <Rules AnalyzerId="Microsoft.Unity.Analyzers" RuleNamespace="Microsoft.Unity.Analyzers">
     <Rule Id="UNT0005" Action="Warning" />
     <Rule Id="UNT0021" Action="Warning" />
+    <Rule Id="UNT0034" Action="None" />
   </Rules>
   <Rules AnalyzerId="SonarAnalyzer.CSharp" RuleNamespace="SonarAnalyzer.CSharp">
     <Rule Id="S100" Action="Warning" />

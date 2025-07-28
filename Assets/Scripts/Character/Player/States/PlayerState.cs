@@ -14,6 +14,8 @@ public abstract class PlayerState : CharacterState
 
     public PlayerInputHandler PlayerInputHandler => this.PlayerGeneralStateMachine.PlayerController.InputHandler;
 
+    public PlayerSkillManager PlayerSkillManager => this.PlayerController.PlayerSkillManager;
+
     protected sealed override void OnCharacterStateEnter()
     {
         this.OnPlayerStateEnter();

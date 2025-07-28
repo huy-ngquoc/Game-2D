@@ -1306,6 +1306,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5280607542726284502, guid: ef06d081e44cbd64eb65eb887582bf80, type: 3}
   m_PrefabInstance: {fileID: 309488797}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &325068675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 325068676}
+  m_Layer: 6
+  m_Name: Throw Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &325068676
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325068675}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.6, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 983618823}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &351462669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7222,6 +7253,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 983618823}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &506768452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 506768453}
+  m_Layer: 6
+  m_Name: Attack Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &506768453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506768452}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 983618823}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -7636,7 +7698,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 0000000003476779c939be76ef2808c8db5f9a31bfab5d0ad7f1c340abae8db88d5addffa12713ed
+  m_ApplyToSortingLayers: 0000000003476779c939be76ef2808c8db5f9a31bfab5d0ad7f1c340abae8db88d5addffa12713edf7f7a078
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -11390,6 +11452,7 @@ GameObject:
   - component: {fileID: 983618829}
   - component: {fileID: 983618830}
   - component: {fileID: 983618831}
+  - component: {fileID: 983618832}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -11412,6 +11475,8 @@ Transform:
   m_Children:
   - {fileID: 1053032970}
   - {fileID: 495314103}
+  - {fileID: 325068676}
+  - {fileID: 506768453}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &983618825
@@ -11498,6 +11563,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   groundCheckDistance: 0.15
+  attackCheck: {fileID: 506768453}
+  attackCheckRadius: 0.8
   attackTargetLayerMask:
     serializedVersion: 2
     m_Bits: 128
@@ -11544,7 +11611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 1000
   moveSpeed: 8
-  attackRange: 5
+  attackRange: 3
   playerController: {fileID: 983618827}
   jumpForce: 500
 --- !u!114 &983618831
@@ -11560,6 +11627,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 983618827}
+  throwSkill: {fileID: 983618832}
+--- !u!114 &983618832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983618821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fca4018835b0b2d41811dbdd176e8498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0.5
+  playerSkillManager: {fileID: 983618831}
+  kunaiPrefab: {fileID: 7608103691992786165, guid: 682016a388170e447886405e9b799867, type: 3}
+  throwTransform: {fileID: 325068676}
+  kunaiSpeed: 5
+  kunaiMaxExistanceSeconds: 5
 --- !u!1 &984154628
 GameObject:
   m_ObjectHideFlags: 0
@@ -13669,6 +13755,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5280607542726284502, guid: ef06d081e44cbd64eb65eb887582bf80, type: 3}
   m_PrefabInstance: {fileID: 1175853293}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225602367
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1225602368}
+  m_Layer: 6
+  m_Name: Attack Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1225602368
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225602367}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1550334080}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1296964735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14202,6 +14319,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1225602368}
   - {fileID: 265642329}
   - {fileID: 1298250896}
   m_Father: {fileID: 0}
@@ -14226,6 +14344,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   groundCheckDistance: 0.1
+  attackCheck: {fileID: 1225602368}
+  attackCheckRadius: 0.8
   attackTargetLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -14261,7 +14381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 1000
   moveSpeed: 8
-  attackRange: 5
+  attackRange: 3
   enemyController: {fileID: 1550334081}
   detectionRange: 10
 --- !u!114 &1550334084
