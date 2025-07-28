@@ -71,7 +71,7 @@ namespace Game
 
             this.transform.localPosition = newPosition;
 
-            this.transform.Rotate(new Vector3(0, 0, this.rotationSpeed));
+            this.transform.Rotate(new Vector3(0, 0, this.rotationSpeed * deltaTime));
 
             if (newPosition == this.targetPositions[this.targetPositionsIdx])
             {

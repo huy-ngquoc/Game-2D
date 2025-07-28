@@ -13,6 +13,8 @@ namespace Game
 
         public bool LeftMousePressed { get; private set; } = false;
 
+        public void CancelLeftMousePressed() => this.LeftMousePressed = false;
+
         public void Dispose()
         {
             this.inputSystemAction?.Dispose();
