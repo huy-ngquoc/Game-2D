@@ -7,12 +7,14 @@ namespace Game
     public sealed class PlayerThrowSkill : PlayerSkill
     {
         [SerializeField]
-        [RequireReference]
-        private GameObject kunaiPrefab = null!;
-
-        [SerializeField]
         [ResolveComponentInChildren("Throw Point")]
         private Transform throwTransform = null!;
+
+        [Header("Kunai Info")]
+
+        [SerializeField]
+        [RequireReference]
+        private GameObject kunaiPrefab = null!;
 
         [SerializeField]
         [Range(0.5F, 10)]
@@ -25,9 +27,9 @@ namespace Game
         protected override void CastLogic()
         {
             var kunai = Object.Instantiate(this.kunaiPrefab, this.throwTransform.position, this.transform.rotation, null);
-            if (!kunai.TryGetComponent<KunaiController>(out var kunaiController))
+            if (!kunai.TryGetComponent<PlayerKunaiController>(out var kunaiController))
             {
-                Debug.LogError($"No component {nameof(KunaiController)} on Kunai Prefab!");
+                Debug.LogError($"No component {nameof(PlayerKunaiController)} on Kunai Prefab!");
             }
 
             kunaiController.Setup(this.PlayerController.AttackTargetLayerMask, this.kunaiSpeed, this.kunaiMaxExistanceSeconds);

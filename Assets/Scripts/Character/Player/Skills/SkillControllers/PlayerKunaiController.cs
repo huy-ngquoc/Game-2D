@@ -4,7 +4,7 @@ namespace Game
 {
     using UnityEngine;
 
-    public sealed class KunaiController : MonoBehaviour
+    public sealed class PlayerKunaiController : MonoBehaviour
     {
         [SerializeField]
         [ResolveComponent]
