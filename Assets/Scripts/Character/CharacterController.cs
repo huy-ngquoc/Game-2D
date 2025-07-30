@@ -157,6 +157,17 @@ public abstract class CharacterController : MonoBehaviour
         // The derived classes can decide if they override this method
     }
 
+    protected void Start()
+    {
+        this.OnCharacterControllerStart();
+    }
+
+    protected virtual void OnCharacterControllerStart()
+    {
+        // Leave this method blank
+        // The derived classes can decide if they override this method
+    }
+
     protected void Update()
     {
         this.OnCharacterControllerUpdate();
