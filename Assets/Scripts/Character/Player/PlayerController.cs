@@ -44,6 +44,7 @@ namespace Game
 
         protected override void OnCharacterControllerSetup()
         {
+            UIManager.Instance.UnityAccess(i => i.SetCoin(this.coinCounter));
             this.transform.position = this.SavePoint;
         }
 
@@ -63,6 +64,7 @@ namespace Game
             {
                 Object.Destroy(collision.gameObject);
                 ++this.coinCounter;
+                UIManager.Instance.UnityAccess(i => i.SetCoin(this.coinCounter));
             }
             else if (collision.CompareTag("DeathZone"))
             {
