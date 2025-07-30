@@ -35,7 +35,7 @@ public abstract class CharacterStats : MonoBehaviour
             return;
         }
 
-        if (this.currentHealth < damage)
+        if (this.currentHealth <= damage)
         {
             this.currentHealth = 0;
             this.CharacterController.Die();

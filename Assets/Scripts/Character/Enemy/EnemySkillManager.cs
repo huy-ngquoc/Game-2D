@@ -19,5 +19,7 @@ namespace Game
         public override CharacterController CharacterController => this.enemyController;
 
         public EnemyAttackSkill AttackSkill => this.attackSkill;
+
+        public override IAttackSkill CharacterAttackSkill => this.attackSkill;
     }
 }

@@ -24,6 +24,10 @@ namespace Game
         [Range(1, 10)]
         private float kunaiMaxExistanceSeconds = 5;
 
+        [SerializeField]
+        [Range(1, 100)]
+        private int kunaiDamage = 10;
+
         protected override void CastLogic()
         {
             var kunai = Object.Instantiate(this.kunaiPrefab, this.throwTransform.position, this.transform.rotation, null);
@@ -32,7 +36,11 @@ namespace Game
                 Debug.LogError($"No component {nameof(PlayerKunaiController)} on Kunai Prefab!");
             }
 
-            kunaiController.Setup(this.PlayerController.AttackTargetLayerMask, this.kunaiSpeed, this.kunaiMaxExistanceSeconds);
+            kunaiController.Setup(
+                this.PlayerController.AttackTargetLayerMask,
+                this.kunaiSpeed,
+                this.kunaiMaxExistanceSeconds,
+                this.kunaiDamage);
 
             this.PlayerGeneralStateMachine.SetStateToChangeTo(this.PlayerGeneralStateMachine.ThrowState);
         }

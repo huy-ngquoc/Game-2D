@@ -11612,7 +11612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f4fe30bd33c0e547ab975db8a6d6f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 1000
+  baseHealth: 1000
   moveSpeed: 8
   playerController: {fileID: 983618827}
   jumpForce: 500
@@ -11645,8 +11645,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 0.5
   playerSkillManager: {fileID: 983618831}
-  kunaiPrefab: {fileID: 7608103691992786165, guid: 682016a388170e447886405e9b799867, type: 3}
   throwTransform: {fileID: 325068676}
+  kunaiPrefab: {fileID: 7608103691992786165, guid: 682016a388170e447886405e9b799867, type: 3}
   kunaiSpeed: 5
   kunaiMaxExistanceSeconds: 5
 --- !u!114 &983618833
@@ -14398,7 +14398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f5fdcbfe1fd3941a5d492c7048eef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 1000
+  baseHealth: 100
   moveSpeed: 8
   enemyController: {fileID: 1550334081}
 --- !u!114 &1550334084

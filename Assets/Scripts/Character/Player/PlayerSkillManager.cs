@@ -25,5 +25,7 @@ namespace Game
         public PlayerController PlayerController => this.playerController;
 
         public override CharacterController CharacterController => this.playerController;
+
+        public override IAttackSkill CharacterAttackSkill => this.attackSkill;
     }
 }

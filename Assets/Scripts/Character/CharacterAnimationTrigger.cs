@@ -18,7 +18,7 @@ public abstract class CharacterAnimationTrigger : MonoBehaviour
         {
             if (collider.TryGetComponent<CharacterStats>(out var targetStats))
             {
-                targetStats.TakeDamage(30);
+                targetStats.TakeDamage(this.CharacterController.CharacterSkillManager.CharacterAttackSkill.Damage);
             }
         }
     }

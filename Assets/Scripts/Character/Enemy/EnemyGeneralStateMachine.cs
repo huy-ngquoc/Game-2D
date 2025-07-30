@@ -23,6 +23,7 @@ namespace Game
             this.IdleState = new EnemyIdleState(this);
             this.RunState = new EnemyRunState(this);
             this.AttackState = new EnemyAttackState(this);
+            this.DeadState = new EnemyDeadState(this);
         }
 
         public EnemyController EnemyController => this.enemyController;
@@ -38,6 +39,8 @@ namespace Game
         public EnemyRunState RunState { get; }
 
         public EnemyAttackState AttackState { get; }
+
+        public EnemyDeadState DeadState { get; }
 
         public override ICharacterState InitialState => this.IdleState;
     }

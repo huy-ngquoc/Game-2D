@@ -38,5 +38,10 @@ namespace Game
                 Vector2.right * this.FacingDirection,
                 this.EnemySkillManager.AttackSkill.DetectionRange,
                 this.AttackTargetLayerMask);
+
+        protected override void OnCharacterControllerDie()
+        {
+            this.EnemyGeneralStateMachine.SetStateToChangeTo(this.EnemyGeneralStateMachine.DeadState);
+        }
     }
 }

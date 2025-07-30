@@ -13,12 +13,14 @@ namespace Game
         private LayerMask targetLayerMask = new();
         private float speed = 5;
         private float maxExistanceSeconds = 5;
+        private int damage = 10;
 
-        public void Setup(LayerMask targetLayerMask, float speed, float maxExistanceSeconds)
+        public void Setup(LayerMask targetLayerMask, float speed, float maxExistanceSeconds, int damage)
         {
             this.targetLayerMask = targetLayerMask;
             this.speed = speed;
             this.maxExistanceSeconds = maxExistanceSeconds;
+            this.damage = damage;
         }
 
         public void Destroy()
@@ -49,7 +51,7 @@ namespace Game
                 return;
             }
 
-            enemyStats.TakeDamage(30);
+            enemyStats.TakeDamage(this.damage);
             this.Destroy();
         }
     }

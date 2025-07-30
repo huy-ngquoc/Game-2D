@@ -4,7 +4,7 @@ namespace Game
 {
     using UnityEngine;
 
-    public sealed class EnemyAttackSkill : EnemySkill
+    public sealed class EnemyAttackSkill : EnemySkill, IAttackSkill
     {
         [SerializeField]
         [Range(5, 20)]
@@ -14,9 +14,15 @@ namespace Game
         [Range(0.5F, 5)]
         private float attackRange = 5;
 
+        [SerializeField]
+        [Range(1, 100)]
+        private int damage = 30;
+
         public float DetectionRange => this.detectionRange;
 
         public float AttackRange => this.attackRange;
+
+        public int Damage => this.damage;
 
         protected override void CastLogic()
         {
