@@ -6,9 +6,13 @@ namespace Game
 
     public sealed class PlayerKunaiController : MonoBehaviour
     {
-        [SerializeField]
+        [SerializeReference]
         [ResolveComponent]
         private new Rigidbody2D rigidbody2D = null!;
+
+        [SerializeReference]
+        [RequireReference]
+        private GameObject hitVfx = null!;
 
         private LayerMask targetLayerMask = new();
         private float speed = 5;
@@ -52,6 +56,7 @@ namespace Game
             }
 
             enemyStats.TakeDamage(this.damage);
+            Object.Instantiate(this.hitVfx, this.transform.position, this.transform.rotation);
             this.Destroy();
         }
     }

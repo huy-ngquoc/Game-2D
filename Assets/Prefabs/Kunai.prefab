@@ -208,3 +208,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 2131014778460080941}
+  hitVfx: {fileID: 1885263176606739217, guid: 66587961f845c4148986a076bf14a2d8, type: 3}
