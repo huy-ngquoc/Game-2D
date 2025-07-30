@@ -6,9 +6,11 @@ namespace Game
 
     public sealed class PlayerInputHandler : MonoBehaviour, System.IDisposable
     {
+        private Vector2 moveInput = Vector2.zero;
+
         private InputSystemAction inputSystemAction = null!;
 
-        public Vector2 MoveInput { get; private set; } = Vector2.zero;
+        public Vector2 MoveInput => this.moveInput;
 
         public float MoveInputX => this.MoveInput.x;
 
@@ -64,6 +66,18 @@ namespace Game
 
         public bool ThrowPressed { get; private set; } = false;
 
+        public void PerformMoveLeftInputAction() => this.moveInput.x = -1;
+
+        public void PerformMoveRightInputAction() => this.moveInput.x = 1;
+
+        public void PerformJumpInputAction() => this.JumpPressed = true;
+
+        public void PerformAttackInputAction() => this.AttackPressed = true;
+
+        public void PerformThrowInputAction() => this.ThrowPressed = true;
+
+        public void CancelMoveInputHorizonalAction() => this.moveInput.x = 0;
+
         public void CancelJumpInputAction() => this.JumpPressed = false;
 
         public void CancelAttackInputAction() => this.AttackPressed = false;
@@ -80,8 +94,8 @@ namespace Game
             this.inputSystemAction = new InputSystemAction();
             var playerActions = this.inputSystemAction.Player;
 
-            playerActions.Move.performed += context => this.MoveInput = context.ReadValue<Vector2>();
-            playerActions.Move.canceled += context => this.MoveInput = Vector2.zero;
+            playerActions.Move.performed += context => this.moveInput = context.ReadValue<Vector2>();
+            playerActions.Move.canceled += context => this.moveInput = Vector2.zero;
 
             playerActions.Jump.performed += context => this.JumpPressed = true;
             playerActions.Jump.canceled += context => this.JumpPressed = false;
