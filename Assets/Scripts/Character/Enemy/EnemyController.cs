@@ -6,6 +6,8 @@ namespace Game
 
     public sealed class EnemyController : CharacterController
     {
+        [Header("Enemy Specific Component")]
+
         [SerializeReference]
         [ResolveComponent]
         private EnemyGeneralStateMachine enemyGeneralStateMachine = null!;
@@ -34,7 +36,7 @@ namespace Game
             => Physics2D.Raycast(
                 this.transform.position,
                 Vector2.right * this.FacingDirection,
-                this.EnemyStats.DetectionRange,
+                this.EnemySkillManager.AttackSkill.DetectionRange,
                 this.AttackTargetLayerMask);
     }
 }

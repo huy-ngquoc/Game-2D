@@ -10,14 +10,8 @@ namespace Game
         [ResolveComponent]
         private EnemyController enemyController = null!;
 
-        [SerializeField]
-        [Range(5, 20)]
-        private float detectionRange = 10;
-
         public EnemyController EnemyController => this.enemyController;
 
         public override CharacterController CharacterController => this.enemyController;
-
-        public float DetectionRange => this.detectionRange;
     }
 }

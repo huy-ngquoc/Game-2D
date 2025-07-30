@@ -15,6 +15,9 @@ public sealed class PlayerDeadState : PlayerState
 
     protected override void OnPlayerStateEnter()
     {
+        this.PlayerController.Rigidbody2D.linearVelocityX = 0;
+        this.PlayerController.gameObject.layer = this.PlayerController.DeadLayerMask;
+
         this.StateTimer = 2;
     }
 
@@ -22,7 +25,13 @@ public sealed class PlayerDeadState : PlayerState
     {
         if (this.StateTimer <= 0)
         {
-            this.PlayerController.Init();
+            this.PlayerGeneralStateMachine.SetStateToChangeTo(this.PlayerGeneralStateMachine.GroundState);
+            this.PlayerController.Setup();
         }
+    }
+
+    protected override void OnPlayerStateExit()
+    {
+        this.PlayerController.gameObject.layer = this.PlayerController.AliveLayerMask;
     }
 }

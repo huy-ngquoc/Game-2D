@@ -39,6 +39,11 @@ public abstract class PlayerGroundedState : PlayerState
             return;
         }
 
+        if (this.PlayerInputHandler.AttackPressed && this.PlayerSkillManager.AttackSkill.Cast())
+        {
+            return;
+        }
+
         this.OnPlayerGroundedStateUpdate();
     }
 

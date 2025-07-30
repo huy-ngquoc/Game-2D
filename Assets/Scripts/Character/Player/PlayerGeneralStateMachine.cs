@@ -17,6 +17,7 @@ namespace Game
             this.DeadState = new PlayerDeadState(this);
             this.JumpState = new PlayerJumpState(this);
             this.ThrowState = new PlayerThrowState(this);
+            this.AttackState = new PlayerAttackState(this);
         }
 
         public PlayerController PlayerController => this.playerController;
@@ -34,6 +35,8 @@ namespace Game
         public PlayerJumpState JumpState { get; }
 
         public PlayerThrowState ThrowState { get; }
+
+        public PlayerAttackState AttackState { get; }
 
         public override ICharacterState InitialState => this.GroundState;
     }

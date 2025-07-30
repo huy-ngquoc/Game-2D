@@ -29,7 +29,7 @@ public sealed class EnemyIdleState : EnemyState
         var isTargetDetected = targetRaycastHit2D.collider != null;
         if (isTargetDetected)
         {
-            if (targetRaycastHit2D.distance <= this.EnemyStats.AttackRange)
+            if (targetRaycastHit2D.distance <= this.EnemySkillManager.AttackSkill.AttackRange)
             {
                 this.EnemySkillManager.AttackSkill.Cast();
             }

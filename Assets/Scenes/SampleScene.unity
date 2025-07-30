@@ -11453,6 +11453,7 @@ GameObject:
   - component: {fileID: 983618830}
   - component: {fileID: 983618831}
   - component: {fileID: 983618832}
+  - component: {fileID: 983618833}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -11568,6 +11569,8 @@ MonoBehaviour:
   attackTargetLayerMask:
     serializedVersion: 2
     m_Bits: 128
+  aliveLayerMask: 6
+  deadLayerMask: 8
   inputHandler: {fileID: 983618828}
   playerGeneralStateMachine: {fileID: 983618829}
   playerStats: {fileID: 983618830}
@@ -11611,7 +11614,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 1000
   moveSpeed: 8
-  attackRange: 3
   playerController: {fileID: 983618827}
   jumpForce: 500
 --- !u!114 &983618831
@@ -11628,6 +11630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 983618827}
   throwSkill: {fileID: 983618832}
+  attackSkill: {fileID: 983618833}
 --- !u!114 &983618832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11646,6 +11649,20 @@ MonoBehaviour:
   throwTransform: {fileID: 325068676}
   kunaiSpeed: 5
   kunaiMaxExistanceSeconds: 5
+--- !u!114 &983618833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983618821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7425523fd85ecd744a414da28dfa320d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  playerSkillManager: {fileID: 983618831}
 --- !u!1 &984154628
 GameObject:
   m_ObjectHideFlags: 0
@@ -14319,9 +14336,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1225602368}
   - {fileID: 265642329}
   - {fileID: 1298250896}
+  - {fileID: 1225602368}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1550334081
@@ -14349,6 +14366,8 @@ MonoBehaviour:
   attackTargetLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  aliveLayerMask: 7
+  deadLayerMask: 8
   enemyGeneralStateMachine: {fileID: 1550334082}
   enemyStats: {fileID: 1550334083}
   enemySkillManager: {fileID: 1550334084}
@@ -14381,9 +14400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 1000
   moveSpeed: 8
-  attackRange: 3
   enemyController: {fileID: 1550334081}
-  detectionRange: 10
 --- !u!114 &1550334084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14410,8 +14427,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c521573ca4b5404d9e851e695795f9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0.5
+  cooldown: 0
   enemySkillManager: {fileID: 1550334084}
+  detectionRange: 20
+  attackRange: 2
 --- !u!1001 &1567419067
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -25,7 +25,7 @@ public sealed class EnemyRunState : EnemyState
         var targetRaycastHit2D = this.EnemyController.TargetRaycastHit2D;
         var isTargetDetected = targetRaycastHit2D.collider != null;
         if (isTargetDetected
-            && (targetRaycastHit2D.distance <= this.EnemyStats.AttackRange))
+            && (targetRaycastHit2D.distance <= this.EnemySkillManager.AttackSkill.AttackRange))
         {
             if (!this.EnemySkillManager.AttackSkill.Cast())
             {

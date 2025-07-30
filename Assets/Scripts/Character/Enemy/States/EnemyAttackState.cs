@@ -34,7 +34,7 @@ public sealed class EnemyAttackState : EnemyState
             return;
         }
 
-        var isTargetInRange = targetRaycastHit2D.distance <= this.EnemyStats.AttackRange;
+        var isTargetInRange = targetRaycastHit2D.distance <= this.EnemySkillManager.AttackSkill.AttackRange;
         if (!isTargetInRange)
         {
             this.EnemyGeneralStateMachine.SetStateToChangeTo(this.EnemyGeneralStateMachine.RunState);

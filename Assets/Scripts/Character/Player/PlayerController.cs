@@ -6,6 +6,8 @@ namespace Game
 
     public sealed class PlayerController : CharacterController
     {
+        [Header("Player Specific Component")]
+
         [SerializeReference]
         [ResolveComponent]
         private PlayerInputHandler inputHandler = null!;
@@ -40,10 +42,14 @@ namespace Game
 
         public override CharacterSkillManager CharacterSkillManager => this.playerSkillManager;
 
-        protected override void OnCharacterControllerInit()
+        protected override void OnCharacterControllerSetup()
         {
             this.transform.position = this.SavePoint;
-            this.playerGeneralStateMachine.SetStateToChangeTo(this.playerGeneralStateMachine.GroundState);
+        }
+
+        protected override void OnCharacterControllerDie()
+        {
+            this.PlayerGeneralStateMachine.SetStateToChangeTo(this.PlayerGeneralStateMachine.DeadState);
         }
 
         protected override void OnCharacterControllerAwake()

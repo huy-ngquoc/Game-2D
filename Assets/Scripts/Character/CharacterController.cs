@@ -34,9 +34,25 @@ public abstract class CharacterController : MonoBehaviour
     [Range(0.01F, 2)]
     private float groundCheckDistance = 0.1F;
 
+    [SerializeReference]
+    [ResolveComponentInChildren("Attack Check")]
+    private Transform attackCheck = null!;
+
+    [SerializeField]
+    [field: Range(0.1F, 2.0F)]
+    private float attackCheckRadius = 0.8F;
+
     [SerializeField]
     [LayerMaskIsNothingOrEverythingWarning]
     private LayerMask attackTargetLayerMask = new();
+
+    [SerializeField]
+    [LayerMaskSelection]
+    private int aliveLayerMask = 0;
+
+    [SerializeField]
+    [LayerMaskSelection]
+    private int deadLayerMask = 0;
 
     protected CharacterController()
     {
@@ -60,7 +76,15 @@ public abstract class CharacterController : MonoBehaviour
 
     public LayerMask GroundLayerMask => this.groundLayerMask;
 
+    public Vector3 AttackCheckPosition => this.attackCheck.position;
+
+    public float AttackCheckRadius => this.attackCheckRadius;
+
     public LayerMask AttackTargetLayerMask => this.attackTargetLayerMask;
+
+    public int AliveLayerMask => this.aliveLayerMask;
+
+    public int DeadLayerMask => this.deadLayerMask;
 
     public abstract CharacterGeneralStateMachine CharacterGeneralStateMachine { get; }
 
@@ -72,11 +96,14 @@ public abstract class CharacterController : MonoBehaviour
 
     public void Die()
     {
+        this.OnCharacterControllerDie();
     }
 
-    public void Init()
+    public void Setup()
     {
-        this.OnCharacterControllerInit();
+        this.OnCharacterControllerSetup();
+
+        this.CharacterStats.Setup();
     }
 
     public void FlipController(float x)
@@ -94,7 +121,13 @@ public abstract class CharacterController : MonoBehaviour
         this.transform.Rotate(0, 180, 0);
     }
 
-    protected virtual void OnCharacterControllerInit()
+    protected virtual void OnCharacterControllerSetup()
+    {
+        // Leave this method blank
+        // The derived classes can decide if they override this method
+    }
+
+    protected virtual void OnCharacterControllerDie()
     {
         // Leave this method blank
         // The derived classes can decide if they override this method
@@ -102,6 +135,9 @@ public abstract class CharacterController : MonoBehaviour
 
     protected void Awake()
     {
+        this.gameObject.layer = this.aliveLayerMask;
+        this.Setup();
+
         this.OnCharacterControllerAwake();
     }
 
@@ -136,6 +172,7 @@ public abstract class CharacterController : MonoBehaviour
     protected void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(this.attackCheck.position, this.attackCheckRadius);
         Gizmos.DrawLine(this.groundCheck.position, new Vector2(this.groundCheck.position.x, this.groundCheck.position.y - this.groundCheckDistance));
     }
 
