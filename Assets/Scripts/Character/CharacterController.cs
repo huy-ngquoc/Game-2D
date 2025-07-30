@@ -146,9 +146,10 @@ public abstract class CharacterController : MonoBehaviour
     protected void Awake()
     {
         this.gameObject.layer = this.aliveLayerMask;
-        this.Setup();
 
         this.OnCharacterControllerAwake();
+
+        this.Setup();
     }
 
     protected virtual void OnCharacterControllerAwake()
