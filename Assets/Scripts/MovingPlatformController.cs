@@ -14,7 +14,7 @@ namespace Game
 
         [SerializeField]
         [LayerMaskIsNothingOrEverythingWarning]
-        private LayerMask playerLayerMask = new();
+        private LayerMask characterLayerMask = new();
 
         [SerializeField]
         [Range(5, 50)]
@@ -60,17 +60,29 @@ namespace Game
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            var gameObject = collision.gameObject;
-            if (Utils.IsLayerInMask(gameObject, this.playerLayerMask))
+            var collisionGameObject = collision.gameObject;
+            if (!Utils.IsLayerInMask(collisionGameObject, this.characterLayerMask))
             {
-                gameObject.transform.SetParent(this.transform);
+                return;
             }
+
+            if (!collisionGameObject.TryGetComponent<CharacterController>(out var characterController))
+            {
+                return;
+            }
+
+            if (!characterController.IsGroundDetected)
+            {
+                return;
+            }
+
+            collisionGameObject.transform.SetParent(this.transform);
         }
 
         private void OnCollisionExit2D(Collision2D collision)
         {
             var gameObject = collision.gameObject;
-            if (Utils.IsLayerInMask(gameObject, this.playerLayerMask))
+            if (Utils.IsLayerInMask(gameObject, this.characterLayerMask))
             {
                 gameObject.transform.SetParent(null);
             }
@@ -79,9 +91,21 @@ namespace Game
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.white;
-            foreach (var targetPosition in this.targetPositions)
+
+            var parentTransform = this.transform.parent;
+            if (parentTransform != null)
             {
-                Gizmos.DrawSphere(this.transform.parent.TransformPoint(targetPosition), 0.1F);
+                foreach (var targetPosition in this.targetPositions)
+                {
+                    Gizmos.DrawSphere(this.transform.parent.TransformPoint(targetPosition), 0.1F);
+                }
+            }
+            else
+            {
+                foreach (var targetPosition in this.targetPositions)
+                {
+                    Gizmos.DrawSphere(targetPosition, 0.1F);
+                }
             }
         }
     }

@@ -74,5 +74,8 @@ TagManager:
   - name: PlayerThrowable
     uniqueID: 2023815159
     locked: 0
+  - name: UI
+    uniqueID: 1200544795
+    locked: 0
   m_RenderingLayers:
   - Default

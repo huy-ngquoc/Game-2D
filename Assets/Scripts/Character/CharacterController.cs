@@ -2,6 +2,7 @@
 
 namespace Game;
 
+using System;
 using UnityEngine;
 
 public abstract class CharacterController : MonoBehaviour
@@ -57,6 +58,14 @@ public abstract class CharacterController : MonoBehaviour
     protected CharacterController()
     {
     }
+
+    public event EventHandler<EventArgs> Flipped
+    {
+        add => this.OnFlip += value;
+        remove => this.OnFlip -= value;
+    }
+
+    private event EventHandler<EventArgs>? OnFlip = null;
 
     public Rigidbody2D Rigidbody2D => this.rigidbody2D;
 
@@ -119,6 +128,7 @@ public abstract class CharacterController : MonoBehaviour
     {
         this.isFacingRight = !this.isFacingRight;
         this.transform.Rotate(0, 180, 0);
+        this.OnFlip?.Invoke(this, EventArgs.Empty);
     }
 
     protected virtual void OnCharacterControllerSetup()
