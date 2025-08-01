@@ -15,6 +15,11 @@ public sealed class PlayerFallState : PlayerState
 
     protected override void OnPlayerStateUpdate()
     {
+        if (this.PlayerInputHandler.JumpPressed && (this.PlayerGeneralStateMachine.JumpState.JumpLeft > 0))
+        {
+            this.PlayerGeneralStateMachine.SetStateToChangeTo(this.PlayerGeneralStateMachine.JumpState);
+        }
+
         if (this.PlayerController.IsGroundDetected)
         {
             this.PlayerGeneralStateMachine.SetStateToChangeTo(this.PlayerGeneralStateMachine.GroundState);

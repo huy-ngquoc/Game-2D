@@ -11,6 +11,7 @@ public abstract class PlayerGroundedState : PlayerState
 
     protected sealed override void OnPlayerStateEnter()
     {
+        this.PlayerGeneralStateMachine.JumpState.JumpLeft = this.PlayerStats.MaxJump;
         this.OnPlayerGroundedStateEnter();
     }
 
@@ -30,6 +31,7 @@ public abstract class PlayerGroundedState : PlayerState
 
         if (this.PlayerInputHandler.JumpPressed)
         {
+            ++this.PlayerGeneralStateMachine.JumpState.JumpLeft;
             this.PlayerGeneralStateMachine.SetStateToChangeTo(this.PlayerGeneralStateMachine.JumpState);
             return;
         }
@@ -55,6 +57,7 @@ public abstract class PlayerGroundedState : PlayerState
 
     protected sealed override void OnPlayerStateExit()
     {
+        --this.PlayerGeneralStateMachine.JumpState.JumpLeft;
         this.OnPlayerGroundedStateExit();
     }
 

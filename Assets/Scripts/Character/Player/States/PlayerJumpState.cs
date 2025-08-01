@@ -9,6 +9,8 @@ public sealed class PlayerJumpState : PlayerState
         this.PlayerGeneralStateMachine = playerGeneralStateMachine;
     }
 
+    public int JumpLeft { get; set; } = 1;
+
     public override PlayerGeneralStateMachine PlayerGeneralStateMachine { get; }
 
     public override string AnimationBoolName => "Jump";
@@ -17,10 +19,17 @@ public sealed class PlayerJumpState : PlayerState
     {
         this.PlayerInputHandler.CancelJumpInputAction();
         this.PlayerController.Rigidbody2D.AddForceY(this.PlayerStats.JumpForce);
+        --this.PlayerGeneralStateMachine.JumpState.JumpLeft;
     }
 
     protected override void OnPlayerStateUpdate()
     {
+        if (this.PlayerInputHandler.JumpPressed && (this.PlayerGeneralStateMachine.JumpState.JumpLeft > 0))
+        {
+            this.PlayerGeneralStateMachine.SetStateToChangeTo(this.PlayerGeneralStateMachine.JumpState);
+            return;
+        }
+
         var rigidbody2D = this.PlayerController.Rigidbody2D;
         if (rigidbody2D.linearVelocityY <= 0)
         {
