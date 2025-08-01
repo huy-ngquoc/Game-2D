@@ -66,6 +66,8 @@ namespace Game
 
         public bool ThrowPressed { get; private set; } = false;
 
+        public bool DashPressed { get; private set; } = false;
+
         public void PerformMoveLeftInputAction() => this.moveInput.x = -1;
 
         public void PerformMoveRightInputAction() => this.moveInput.x = 1;
@@ -76,6 +78,8 @@ namespace Game
 
         public void PerformThrowInputAction() => this.ThrowPressed = true;
 
+        public void PerformDashInputAction() => this.DashPressed = true;
+
         public void CancelMoveInputHorizonalAction() => this.moveInput.x = 0;
 
         public void CancelJumpInputAction() => this.JumpPressed = false;
@@ -83,6 +87,8 @@ namespace Game
         public void CancelAttackInputAction() => this.AttackPressed = false;
 
         public void CancelThrowInputAction() => this.ThrowPressed = false;
+
+        public void CancelDashInputAction() => this.DashPressed = false;
 
         public void Dispose()
         {
@@ -105,6 +111,9 @@ namespace Game
 
             playerActions.Throw.performed += context => this.ThrowPressed = true;
             playerActions.Throw.canceled += context => this.ThrowPressed = false;
+
+            playerActions.Dash.performed += context => this.DashPressed = true;
+            playerActions.Dash.canceled += context => this.DashPressed = false;
         }
 
         private void OnEnable()

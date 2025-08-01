@@ -29,6 +29,11 @@ public abstract class PlayerState : CharacterState
 
     protected sealed override void OnCharacterStateUpdate()
     {
+        if (this.PlayerInputHandler.DashPressed && this.PlayerSkillManager.DashSkill.Cast())
+        {
+            return;
+        }
+
         this.OnPlayerStateUpdate();
     }
 

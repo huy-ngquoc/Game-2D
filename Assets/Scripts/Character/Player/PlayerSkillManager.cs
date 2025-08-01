@@ -18,9 +18,15 @@ namespace Game
         [ResolveComponent]
         private PlayerAttackSkill attackSkill = null!;
 
+        [SerializeReference]
+        [ResolveComponent]
+        private PlayerDashSkill dashSkill = null!;
+
         public PlayerThrowSkill ThrowSkill => this.throwSkill;
 
         public PlayerAttackSkill AttackSkill => this.attackSkill;
+
+        public PlayerDashSkill DashSkill => this.dashSkill;
 
         public PlayerController PlayerController => this.playerController;
 
